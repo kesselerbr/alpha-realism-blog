@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Realism: Emulating Hasselblad X2D 100C with 50mm f/1.4 Optics | ALPHA REALISM</title>
+    <meta name="description" content="AI image calibration guide for emulating Hasselblad X2D 100C camera paired with 50mm f/1.4 lens. Learn how to simulate sensor physics, bokeh, and chromatic aberration.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --bg-color: #0C0C0F;
+            --container-bg: #141419;
+            --text-main: #E2E2E9;
+            --text-muted: #8E8E9F;
+            --accent: #FF6B00;
+            --border-color: #23232C;
+            --font-main: 'Inter', sans-serif;
+            --font-title: 'Outfit', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-main); line-height: 1.6; padding: 0; }
+        .meta-edge-top { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); background: #070709; padding: 8px 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; overflow: hidden; white-space: nowrap; }
+        .container { max-width: 900px; margin: 40px auto; background: var(--container-bg); border: 1px solid var(--border-color); padding: 40px; position: relative; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+        .container::before { content: ''; position: absolute; width: 15px; height: 15px; border-color: var(--accent); border-style: solid; opacity: 0.8; top: 15px; left: 15px; border-width: 2px 0 0 2px; }
+        .container::after { content: ''; position: absolute; width: 15px; height: 15px; border-color: var(--accent); border-style: solid; opacity: 0.8; top: 15px; right: 15px; border-width: 2px 2px 0 0; }
+        header { border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 30px; }
+        .forensic-bar { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .forensic-bar::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+        h1 { font-family: var(--font-title); font-size: 32px; font-weight: 800; letter-spacing: -0.8px; color: #FFFFFF; line-height: 1.2; }
+        p { margin-bottom: 20px; color: #C3C3D1; font-size: 15px; }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px; background: #1B1B22; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; }
+        .tech-table th, .tech-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border-color); }
+        .tech-table th { background: #252530; font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 1px; }
+        .tech-table td { color: #E2E2E9; }
+        .tech-table td a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .tech-table td a:hover { text-decoration: underline; }
+        .code-console { background: #070709; color: #A5A5C7; padding: 20px; border-radius: 6px; font-family: var(--font-mono); font-size: 13px; margin: 25px 0; border: 1px solid #1A1A22; position: relative; white-space: pre-wrap; word-break: break-all; }
+        .code-console::before { content: 'PROMPT CONSOLE'; position: absolute; top: 5px; right: 10px; font-size: 9px; color: var(--text-muted); letter-spacing: 1px; }
+        .layers-grid { display: flex; flex-direction: column; gap: 12px; margin: 25px 0; }
+        .layer-row { display: flex; font-size: 14px; border-bottom: 1px dashed #1B1B22; padding-bottom: 8px; }
+        .layer-name { font-family: var(--font-mono); font-weight: bold; color: var(--accent); width: 120px; flex-shrink: 0; }
+        .layer-val { color: #C3C3D1; }
+        .cta-box { border: 1px solid var(--border-color); border-left: 4px solid var(--accent); padding: 30px; background: linear-gradient(135deg, #1E1E26 0%, #14141A 100%); text-align: center; margin: 40px 0; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .cta-box h3 { font-family: var(--font-title); font-size: 22px; margin-bottom: 10px; color: #FFFFFF; }
+        .cta-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        .btn-cta { display: inline-block; background-color: var(--accent); color: #000000; font-family: var(--font-title); font-weight: 800; text-decoration: none; padding: 12px 32px; border-radius: 4px; font-size: 15px; box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3); transition: all 0.2s ease; }
+        .btn-cta:hover { background-color: #FF8432; box-shadow: 0 4px 20px rgba(255, 107, 0, 0.5); transform: translateY(-1px); }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .back-link:hover { color: var(--accent); }
+        .section-title { font-family: var(--font-title); font-size: 22px; color: #FFFFFF; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        .sub-list { list-style: none; margin: 15px 0; font-size: 14px; }
+        .sub-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .sub-list li::before { content: '➔'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+        .sub-list li a { color: #8E8E9F; text-decoration: none; transition: color 0.2s; }
+        .sub-list li a:hover { color: var(--accent); text-decoration: underline; }
+        footer { text-align: center; padding: 40px 0; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 60px; background-color: #070709; }
+    
+    </style>
+</head>
+<body>
+    <div class="meta-edge-top">
+        <span>COMBINATION PROFILE // HASSELBLAD X2D 100C + 50MM F/1.4</span>
+        <span>DAYLIGHT FORENSIC LIGHTBOX</span>
+    </div>
+    <div class="container">
+        <a href="../index.html" class="back-link">← BACK TO INDEX</a>
+        <header>
+            <div class="forensic-bar">PROGRAMMATIC SEO // COMBINED SYSTEM</div>
+            <h1>Emulating Hasselblad X2D 100C Sensor with 50mm f/1.4 Optics</h1>
+        </header>
+        <main>
+            <p>Emulating this specific setup in generative models requires aligning sensor resolution and color profiles with lens characteristics like aperture size, depth separation, and diffraction levels.</p>
+            
+            
+            <!-- SVG calibration target blueprint -->
+            <svg viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid var(--border-color); background: #070709; margin: 25px 0; width: 100%; border-radius: 4px; display: block;">
+              <!-- Grid Lines -->
+              <path d="M0 50h800M0 100h800M0 150h800M100 0v200M200 0v200M300 0v200M400 0v200M500 0v200M600 0v200M700 0v200" stroke="#181822" stroke-width="0.5"/>
+              <!-- Diagonals -->
+              <path d="M0 0l800 200M0 200l800 -200" stroke="#121218" stroke-dasharray="2 2"/>
+              <!-- Focus Circles -->
+              <circle cx="400" cy="100" r="80" stroke="#FF6B00" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+              <circle cx="400" cy="100" r="50" stroke="#FF6B00" stroke-width="1.2" stroke-opacity="0.5"/>
+              <circle cx="400" cy="100" r="20" stroke="#FF6B00" stroke-width="2" stroke-opacity="0.8"/>
+              <circle cx="400" cy="100" r="5" fill="#FF6B00"/>
+              <!-- Crosshairs -->
+              <path d="M400 0v200M0 100h800" stroke="#FF6B00" stroke-width="0.5" stroke-opacity="0.4"/>
+              <!-- Text Metrics -->
+              <text x="15" y="30" fill="#8E8E9F" font-family="monospace" font-size="9" opacity="0.6">SYS.CALIBRATION: ACTIVE</text>
+              <text x="15" y="45" fill="#FF6B00" font-family="monospace" font-size="9" font-weight="bold">TARGET: OPTICAL_ALIGNMENT</text>
+              <text x="785" y="30" fill="#8E8E9F" font-family="monospace" font-size="9" text-anchor="end" opacity="0.6">RESOLUTION: HYPER_RAW</text>
+              <text x="785" y="45" fill="#8E8E9F" font-family="monospace" font-size="9" text-anchor="end" opacity="0.6">GRID: 100px SQUARES</text>
+              <!-- Technical details -->
+              <path d="M300 100h-80M500 100h80M400 40v-20M400 160v20" stroke="#8E8E9F" stroke-width="1" stroke-opacity="0.4"/>
+              <!-- Corner ticks -->
+              <path d="M10 10h20v20M790 10h-20v20M10 190h20v-20M790 190h-20v-20" stroke="#FF6B00" stroke-width="1"/>
+            </svg>
+    
+
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">SPECIFICATION</th>
+                        <th>CALIBRATION METRICS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Camera Body</strong></td>
+                        <td><a href="../cameras/hasselblad-x2d.html">Hasselblad X2D 100C</a> (Medium Format CMOS)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lens Optics</strong></td>
+                        <td><a href="../lenses/50mm-f1-4.html">50mm f/1.4</a> (Prime Standard)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Optical Signature</strong></td>
+                        <td>Versatile sharpness, classic perspective, natural human field of view</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensor Signature</strong></td>
+                        <td>Extreme dynamic range, 16-bit color, gradual falloff</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-title">The 5-Layer Prompting Calibration</h3>
+            <p>Describe this camera-lens combination using physical causation parameters:</p>
+            
+            <div class="layers-grid">
+                <div class="layer-row">
+                    <span class="layer-name">Subject:</span>
+                    <span class="layer-val">High resolution facial details, natural skin pore variation without artificial smoothing.</span>
+                </div>
+                <div class="layer-row">
+                    <span class="layer-name">Environment:</span>
+                    <span class="layer-val">Available daylight or room ambient lighting, realistic shadow falloff.</span>
+                </div>
+                <div class="layer-row">
+                    <span class="layer-name">Physics:</span>
+                    <span class="layer-val">Shallow depth of field, circular background bokeh highlights, natural contrast roll-off.</span>
+                </div>
+                <div class="layer-row">
+                    <span class="layer-name">Time:</span>
+                    <span class="layer-val">Faint dust motes in suspension, micro texture wear, organic imperfections.</span>
+                </div>
+                <div class="layer-row">
+                    <span class="layer-name">Camera:</span>
+                    <span class="layer-val">Shot on Hasselblad X2D 100C with 50mm f/1.4 lens, f/1.4 aperture look, organic sensor grain.</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Sample Calibration Prompt</h3>
+            <div class="code-console">A photograph of a subject in soft available window lighting, shallow depth of field, background showing round light bokeh, captured on Hasselblad X2D 100C camera with 50mm f/1.4 lens, organic sensor film grain, realistic optical imperfections, 16:9 aspect ratio.</div>
+
+            <div class="cta-box">
+                <h3>Do you want to generate precise AI images?</h3>
+                <p>Unlock our alpha realism blueprint, physical reliable framework to get the best of your creations with the <a href="https://www.aialpharealism.online/" target="_blank" style="color:var(--accent); font-weight:bold;">ALPHA REALISM</a> Guide.</p>
+                <a href="https://www.aialpharealism.online/" class="btn-cta" target="_blank">Download Ebook Now</a>
+            </div>
+        </main>
+    </div>
+    <footer>
+        &copy; 2026 ALPHA REALISM. ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

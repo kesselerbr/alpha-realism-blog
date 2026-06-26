@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHA REALISM // PROMPT LAB &amp; CALIBRATION DOSSIERS</title>
+    <meta name="description" content="Daylight Forensic Lightbox. Prompt calibration dossiers and cause-and-effect frameworks to bypass plastic AI skin and artificial lighting.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F4F4F6;
+            --container-bg: #FFFFFF;
+            --text-main: #1A1A1A;
+            --text-muted: #66666E;
+            --accent: #FF6B00;
+            --border-color: #D1D1D6;
+            --font-main: 'Inter', sans-serif;
+            --font-title: 'Outfit', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            padding: 0;
+        }
+
+        .meta-edge-top {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            background: #E5E5EA;
+            padding: 8px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            padding: 50px;
+            position: relative;
+        }
+
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-color: var(--accent);
+            border-style: solid;
+            opacity: 0.8;
+        }
+        .container::before { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
+        .container::after { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
+
+        header {
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-title h1 {
+            font-family: var(--font-title);
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .header-title p {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--accent);
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .header-btn-area {
+            text-align: right;
+        }
+
+        .btn-ebook {
+            background: var(--text-main);
+            color: #FFF;
+            font-family: var(--font-title);
+            font-weight: bold;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .btn-ebook:hover {
+            background: var(--accent);
+        }
+
+        /* Dossiers Grid */
+        .dossiers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .dossiers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .case-card {
+            border: 1px solid var(--border-color);
+            background: #F8F8FA;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-img-box {
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            background: #E5E5EA;
+            aspect-ratio: 16/9;
+        }
+
+        .case-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-content {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .case-tag {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .case-title {
+            font-family: var(--font-title);
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 6px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .case-title a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .case-title a:hover {
+            color: var(--accent);
+        }
+
+        .case-date {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .case-link {
+            align-self: flex-start;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-main);
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .case-link:hover {
+            color: var(--accent);
+        }
+
+        /* pSEO Links Section */
+        .pseo-section {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .pseo-section h3 {
+            font-family: var(--font-title);
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .pseo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .pseo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pseo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .pseo-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .pseo-list a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            background-color: #E5E5EA;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="meta-edge-top">
+        <span>FORENSIC LAB FILE // CLASSIFICATION: PUBLIC_ACCESS</span>
+        <span>DAYLIGHT FORENSIC LIGHTBOX &amp; EVIDENCE INDEX</span>
+    </div>
+
+    <div class="container">
+        
+        <header>
+            <div class="header-title">
+                <h1>ALPHA REALISM</h1>
+                <p>Digital Photography Forensic Lab &amp; Calibration Dossiers</p>
+            </div>
+            <div class="header-btn-area">
+                <a href="../index.html" class="btn-ebook">GO TO EBOOK PLATFORM</a>
+            </div>
+        </header>
+
+        <main class="dossiers-grid">
+            
+        <div class="case-card">
+            <div class="case-img-box">
+                <img src="assets/images/mock-case-1_16_9.jpg" alt="The Warm Glow: Master Ambient Light in AI Bedroom Renders">
+            </div>
+            <div class="case-content">
+                <span class="case-tag">TREND: WARM MINIMALIST BEDROOM</span>
+                <h3 class="case-title"><a href="posts/mock-case-1.html">The Warm Glow: Master Ambient Light in AI Bedroom Renders</a></h3>
+                <p class="case-date">CALIBRATION DATE: 2026-06-18</p>
+                <a href="posts/mock-case-1.html" class="case-link">EXAMINE DOSSIER →</a>
+            </div>
+        </div>
+        
+        </main>
+
+        <!-- Programmatic SEO Directories -->
+        <section class="pseo-section">
+            <h3>Camera &amp; Lens Calibration Directories</h3>
+            <div class="pseo-grid">
+                <div>
+                    <h4 style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px;">CAMERAS INTEL</h4>
+                    <ul class="pseo-list">
+                        <li><a href="cameras/leica-m10.html">Realism calibration guidelines for Leica M10</a></li><li><a href="cameras/fujifilm-x-t5.html">Realism calibration guidelines for Fujifilm X-T5</a></li><li><a href="cameras/sony-a7r-v.html">Realism calibration guidelines for Sony a7R V</a></li><li><a href="cameras/hasselblad-x2d.html">Realism calibration guidelines for Hasselblad X2D 100C</a></li><li><a href="cameras/canon-eos-r5.html">Realism calibration guidelines for Canon EOS R5</a></li><li><a href="cameras/nikon-z9.html">Realism calibration guidelines for Nikon Z9</a></li><li><a href="cameras/kodak-portra-400.html">Realism calibration guidelines for Kodak Portra 400 (Emulated)</a></li><li><a href="cameras/fujifilm-superia-400.html">Realism calibration guidelines for Fujifilm Superia 400 (Emulated)</a></li><li><a href="cameras/phase-one-xf.html">Realism calibration guidelines for Phase One XF IQ4</a></li><li><a href="cameras/fujifilm-gfx-100s.html">Realism calibration guidelines for Fujifilm GFX 100S</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px;">LENSES OPTICS</h4>
+                    <ul class="pseo-list">
+                        <li><a href="lenses/50mm-f1-2.html">Optical aberration calibration for 50mm f/1.2</a></li><li><a href="lenses/50mm-f1-4.html">Optical aberration calibration for 50mm f/1.4</a></li><li><a href="lenses/35mm-f1-4.html">Optical aberration calibration for 35mm f/1.4</a></li><li><a href="lenses/85mm-f1-2.html">Optical aberration calibration for 85mm f/1.2</a></li><li><a href="lenses/85mm-f1-4.html">Optical aberration calibration for 85mm f/1.4</a></li><li><a href="lenses/24mm-f1-4.html">Optical aberration calibration for 24mm f/1.4</a></li><li><a href="lenses/135mm-f1-8.html">Optical aberration calibration for 135mm f/1.8</a></li><li><a href="lenses/100mm-macro-f2-8.html">Optical aberration calibration for 100mm Macro f/2.8</a></li><li><a href="lenses/24-70mm-f2-8.html">Optical aberration calibration for 24-70mm f/2.8</a></li><li><a href="lenses/70-200mm-f2-8.html">Optical aberration calibration for 70-200mm f/2.8</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 ALPHA REALISM. ALL RIGHTS RESERVED. LAB LEVEL ACCESS ONLY.
+    </footer>
+
+</body>
+</html>
