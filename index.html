@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALPHA REALISM // PROMPT LAB &amp; CALIBRATION DOSSIERS</title>
-    <meta name="description" content="Daylight Forensic Lightbox. Prompt calibration dossiers and cause-and-effect frameworks to bypass plastic AI skin and artificial lighting.">
+    <title>ALPHA REALISM // Digital Photography &amp; Prompt Calibration Hub</title>
+    <meta name="description" content="A professional digital publication dedicated to bypassing plastic AI skin and synthetic rendering through physical sensor optics and cause-and-effect prompting frameworks.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F4F4F6;
+            --bg-color: #F8FAFC;
             --container-bg: #FFFFFF;
-            --text-main: #1A1A1A;
-            --text-muted: #66666E;
-            --accent: #FF6B00;
-            --border-color: #D1D1D6;
-            --font-main: 'Inter', sans-serif;
-            --font-title: 'Outfit', sans-serif;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --accent: #1880BA;
+            --accent-hover: #1B60AA;
+            --border-color: #E2E8F0;
+            --font-main: 'Open Sans', sans-serif;
+            --font-title: 'DM Sans', sans-serif;
             --font-mono: 'Fira Code', monospace;
         }
 
@@ -34,993 +35,1504 @@
             padding: 0;
         }
 
+        .top-navbar-line {
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+        }
+
         .meta-edge-top {
             font-family: var(--font-mono);
             font-size: 11px;
-            color: var(--text-muted);
-            background: #E5E5EA;
+            color: #FFFFFF;
+            background: #1A202C;
             padding: 8px 24px;
-            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             overflow: hidden;
+            white-space: nowrap;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            background: var(--container-bg);
-            border: 1px solid var(--border-color);
-            padding: 50px;
-            position: relative;
+        .main-header {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        .container::before, .container::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-color: var(--accent);
-            border-style: solid;
-            opacity: 0.8;
-        }
-        .container::before { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
-        .container::after { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
-
-        header {
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            justify-content: flex-start;
+            align-items: center;
         }
 
-        .header-title h1 {
-            font-family: var(--font-title);
-            font-size: 40px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .header-title p {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            color: var(--accent);
-            margin-top: 5px;
-            text-transform: uppercase;
-        }
-
-        .header-btn-area {
-            text-align: right;
-        }
-
-        .btn-ebook {
-            background: var(--text-main);
-            color: #FFF;
-            font-family: var(--font-title);
-            font-weight: bold;
-            padding: 10px 24px;
+        .logo-area {
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-
-        .btn-ebook:hover {
-            background: var(--accent);
-        }
-
-        /* Dossiers Grid */
-        .dossiers-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .dossiers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .case-card {
-            border: 1px solid var(--border-color);
-            background: #F8F8FA;
-            padding: 15px;
             display: flex;
             flex-direction: column;
         }
 
-        .case-img-box {
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            background: #E5E5EA;
-            aspect-ratio: 16/9;
+        .logo-area h1 {
+            font-family: var(--font-title);
+            font-size: 26px;
+            font-weight: 800;
+            color: #1A202C;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
-        .case-img-box img {
+        .logo-area h1 span {
+            color: var(--accent);
+        }
+
+        .logo-area p {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-header-cta {
+            background: var(--accent);
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(24, 128, 186, 0.2);
+            transition: all 0.2s;
+        }
+
+        .btn-header-cta:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 900px) {
+            .main-wrapper {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Content List */
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-heading {
+            font-family: var(--font-title);
+            font-size: 20px;
+            font-weight: 800;
+            color: #1A202C;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .post-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+
+        @media (min-width: 600px) {
+            .post-card {
+                grid-template-columns: 1fr 1.6fr;
+            }
+        }
+
+        .post-img-box {
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            aspect-ratio: 16/9;
+            background: #F8FAFC;
+        }
+
+        .post-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        .case-content {
-            margin-top: 15px;
+        .post-card-content {
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            justify-content: center;
         }
 
-        .case-tag {
+        .post-card-tag {
             font-family: var(--font-mono);
             font-size: 10px;
             color: var(--accent);
             font-weight: bold;
             letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
-        .case-title {
+        .post-card-title {
             font-family: var(--font-title);
             font-size: 20px;
-            font-weight: 700;
-            margin-top: 6px;
-            letter-spacing: -0.5px;
+            font-weight: 800;
             line-height: 1.3;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
         }
 
-        .case-title a {
-            color: var(--text-main);
+        .post-card-title a {
+            color: #1A202C;
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .case-title a:hover {
+        .post-card-title a:hover {
             color: var(--accent);
         }
 
-        .case-date {
-            font-family: var(--font-mono);
-            font-size: 11px;
+        .post-card-excerpt {
+            font-size: 14px;
             color: var(--text-muted);
-            margin-top: 10px;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
-        .case-link {
-            align-self: flex-start;
+        .post-card-meta {
             font-family: var(--font-mono);
             font-size: 11px;
-            color: var(--text-main);
-            font-weight: bold;
-            text-decoration: none;
+            color: #A0AEC0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-top: auto;
-            padding-top: 15px;
         }
 
-        .case-link:hover {
+        .post-card-link {
             color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
         }
 
-        /* pSEO Links Section */
-        .pseo-section {
-            margin-top: 60px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 40px;
+        .post-card-link:hover {
+            color: var(--accent-hover);
         }
 
-        .pseo-section h3 {
+        /* Sidebar */
+        .sidebar-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .widget-title {
             font-family: var(--font-title);
-            font-size: 22px;
+            font-size: 16px;
+            font-weight: 800;
+            color: #1A202C;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .newsletter-widget {
+            background: linear-gradient(135deg, #1B60AA 0%, #1880BA 100%);
+            color: #FFFFFF;
+            border: none;
+        }
+
+        .newsletter-widget h3 {
+            font-family: var(--font-title);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-widget p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #E2E8F0;
             margin-bottom: 20px;
         }
 
-        .pseo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .input-email {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #FFFFFF;
+            font-size: 14px;
+            margin-bottom: 12px;
+            outline: none;
         }
 
-        @media (max-width: 600px) {
-            .pseo-grid {
-                grid-template-columns: 1fr;
-            }
+        .input-email::placeholder {
+            color: #CBD5E0;
         }
 
-        .pseo-list {
+        .btn-subscribe {
+            width: 100%;
+            padding: 12px;
+            background: #FFFFFF;
+            color: var(--accent-hover);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-title);
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: background 0.2s;
+        }
+
+        .btn-subscribe:hover {
+            background: #F8FAFC;
+        }
+
+        .widget-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .widget-list li {
             font-size: 13px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border-color);
         }
 
-        .pseo-list a {
-            color: var(--text-muted);
+        .widget-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .widget-list a {
+            color: var(--text-main);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .pseo-list a:hover {
+        .widget-list a:hover {
             color: var(--accent);
-            text-decoration: underline;
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 0;
             font-family: var(--font-mono);
             font-size: 11px;
-            color: var(--text-muted);
+            background-color: #1A202C;
+            color: #A0AEC0;
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            background-color: #E5E5EA;
         }
     </style>
 </head>
 <body>
 
+    <div class="top-navbar-line"></div>
+
     <div class="meta-edge-top">
-        <span>FORENSIC LAB FILE // CLASSIFICATION: PUBLIC_ACCESS</span>
-        <span>DAYLIGHT FORENSIC LIGHTBOX &amp; EVIDENCE INDEX</span>
+        <span>FORENSIC LAB FILE // PUBLIC INDEX</span>
+        <span>DAYLIGHT FORENSIC LIGHTBOX &amp; EVIDENCE HUB</span>
     </div>
 
-    <div class="container">
-        
-        <header>
-            <div class="header-title">
-                <h1>ALPHA REALISM</h1>
-                <p>Digital Photography Forensic Lab &amp; Calibration Dossiers</p>
-            </div>
-            <div class="header-btn-area">
-                <a href="../index.html" class="btn-ebook">GO TO EBOOK PLATFORM</a>
-            </div>
-        </header>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <h1><span>ALPHA</span> REALISM</h1>
+                <p>Digital Photography &amp; Prompt Calibration</p>
+            </a>
+            <nav class="nav-links">
+                <a href="#dossiers">Dossiers</a>
+                <a href="#directories">Sensor Guides</a>
+                <a href="https://www.aialpharealism.online/" class="btn-header-cta" target="_blank">Download Ebook</a>
+            </nav>
+        </div>
+    </header>
 
-        <main class="dossiers-grid">
+    <div class="main-wrapper">
+        
+        <!-- Left Main Column (Posts List) -->
+        <main class="content-column" id="dossiers">
+            <h2 class="section-heading">Forensic Calibration Dossiers</h2>
             
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0bb7e0bf_16_9.jpg" alt="Forensic Realism Calibration for Candid Portraits: Building Camera-Grade Human Presence Beyond AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0bb7e0bf.html">
+                    <img src="assets/images/0bb7e0bf_16_9.jpg" alt="Forensic Realism Calibration for Candid Portraits: Building Camera-Grade Human Presence Beyond AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE BEST CAMERA LENSES PROMPTS FOR AUTHENTIC AI PORTRAITS</span>
-                <h3 class="case-title"><a href="posts/0bb7e0bf.html">Forensic Realism Calibration for Candid Portraits: Building Camera-Grade Human Presence Beyond AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-25</p>
-                <a href="posts/0bb7e0bf.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE BEST CAMERA LENSES PROMPTS FOR AUTHENTIC AI PORTRAITS</span>
+                <h3 class="post-card-title"><a href="posts/0bb7e0bf.html">Forensic Realism Calibration for Candid Portraits: Building Camera-Grade Human Presence Beyond AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits still fall into the same visual trap: perfect skin, symmetrical faces, idealized poses, and generic cinematic lighting. While these ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-25</span>
+                    <span>•</span>
+                    <a href="posts/0bb7e0bf.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/fc6280f6_16_9.jpg" alt="Forensic Realism Study of a Weathered Steel Watch Case: Building Camera-Grade Material Authenticity">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/fc6280f6.html">
+                    <img src="assets/images/fc6280f6_16_9.jpg" alt="Forensic Realism Study of a Weathered Steel Watch Case: Building Camera-Grade Material Authenticity">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: FIXING THE CGI METAL REFLECTIONS IN AI PRODUCT RENDERS</span>
-                <h3 class="case-title"><a href="posts/fc6280f6.html">Forensic Realism Study of a Weathered Steel Watch Case: Building Camera-Grade Material Authenticity</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-24</p>
-                <a href="posts/fc6280f6.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: FIXING THE CGI METAL REFLECTIONS IN AI PRODUCT RENDERS</span>
+                <h3 class="post-card-title"><a href="posts/fc6280f6.html">Forensic Realism Study of a Weathered Steel Watch Case: Building Camera-Grade Material Authenticity</a></h3>
+                <p class="post-card-excerpt">Many AI-generated product images fall into the same visual trap: spotless materials, exaggerated reflections, and repetitive luxury aesthetics. A weathered stee...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-24</span>
+                    <span>•</span>
+                    <a href="posts/fc6280f6.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/5f6a96f2_16_9.jpg" alt="Forensic Realism Calibration for Street Photography: Natural Depth of Field and Authentic Optical Falloff">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/5f6a96f2.html">
+                    <img src="assets/images/5f6a96f2_16_9.jpg" alt="Forensic Realism Calibration for Street Photography: Natural Depth of Field and Authentic Optical Falloff">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: BYPASSING THE ARTIFICIAL SHARPNESS OF DEFAULT AI CAMERAS</span>
-                <h3 class="case-title"><a href="posts/5f6a96f2.html">Forensic Realism Calibration for Street Photography: Natural Depth of Field and Authentic Optical Falloff</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-24</p>
-                <a href="posts/5f6a96f2.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: BYPASSING THE ARTIFICIAL SHARPNESS OF DEFAULT AI CAMERAS</span>
+                <h3 class="post-card-title"><a href="posts/5f6a96f2.html">Forensic Realism Calibration for Street Photography: Natural Depth of Field and Authentic Optical Falloff</a></h3>
+                <p class="post-card-excerpt">Street photography is often reduced by image-generation systems to a predictable set of visual clichés: exaggerated background blur, flawless lighting, perfectl...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-24</span>
+                    <span>•</span>
+                    <a href="posts/5f6a96f2.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0c5a6840_16_9.jpg" alt="Forensic Realism Calibration for Natural Portraits: Breaking the Repetitive AI Look">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0c5a6840.html">
+                    <img src="assets/images/0c5a6840_16_9.jpg" alt="Forensic Realism Calibration for Natural Portraits: Breaking the Repetitive AI Look">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: FIXING THE FLAT BACKGROUND RENDERING IN DEFAULT AI PORTRAITS</span>
-                <h3 class="case-title"><a href="posts/0c5a6840.html">Forensic Realism Calibration for Natural Portraits: Breaking the Repetitive AI Look</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-23</p>
-                <a href="posts/0c5a6840.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: FIXING THE FLAT BACKGROUND RENDERING IN DEFAULT AI PORTRAITS</span>
+                <h3 class="post-card-title"><a href="posts/0c5a6840.html">Forensic Realism Calibration for Natural Portraits: Breaking the Repetitive AI Look</a></h3>
+                <p class="post-card-excerpt">Portrait generation has become trapped in a cycle of repetitive visual shortcuts. Default AI outputs often rely on polished skin, exaggerated depth separation, ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-23</span>
+                    <span>•</span>
+                    <a href="posts/0c5a6840.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/92702810_16_9.jpg" alt="Forensic Realism Calibration: A Blank Leather Notebook on a Rustic Wooden Desk">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/92702810.html">
+                    <img src="assets/images/92702810_16_9.jpg" alt="Forensic Realism Calibration: A Blank Leather Notebook on a Rustic Wooden Desk">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO PREVENT AI FROM ADDING UNWANTED TEXT AND LOGOS</span>
-                <h3 class="case-title"><a href="posts/92702810.html">Forensic Realism Calibration: A Blank Leather Notebook on a Rustic Wooden Desk</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-23</p>
-                <a href="posts/92702810.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO PREVENT AI FROM ADDING UNWANTED TEXT AND LOGOS</span>
+                <h3 class="post-card-title"><a href="posts/92702810.html">Forensic Realism Calibration: A Blank Leather Notebook on a Rustic Wooden Desk</a></h3>
+                <p class="post-card-excerpt">Many AI-generated product and tabletop images fall into a repetitive visual pattern: flawless materials, perfect lighting, and surfaces that appear untouched by...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-23</span>
+                    <span>•</span>
+                    <a href="posts/92702810.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/331cca22_16_9.jpg" alt="Forensic Realism Calibration: Natural Lamp Shadows in a Lived-In Living Room Corner">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/331cca22.html">
+                    <img src="assets/images/331cca22_16_9.jpg" alt="Forensic Realism Calibration: Natural Lamp Shadows in a Lived-In Living Room Corner">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CORRECTING ARTIFICIAL SHADOWS IN INTERIOR AI RENDERS</span>
-                <h3 class="case-title"><a href="posts/331cca22.html">Forensic Realism Calibration: Natural Lamp Shadows in a Lived-In Living Room Corner</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-22</p>
-                <a href="posts/331cca22.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CORRECTING ARTIFICIAL SHADOWS IN INTERIOR AI RENDERS</span>
+                <h3 class="post-card-title"><a href="posts/331cca22.html">Forensic Realism Calibration: Natural Lamp Shadows in a Lived-In Living Room Corner</a></h3>
+                <p class="post-card-excerpt">Many AI-generated interior photographs fall into the same visual trap: immaculate furniture, exaggerated contrast, and decorative perfection that rarely exists ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-22</span>
+                    <span>•</span>
+                    <a href="posts/331cca22.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/7f71608c_16_9.jpg" alt="Forensic Realism Calibration of Heavy Linen Fabric: Building Camera-Grade Texture Without Generic AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/7f71608c.html">
+                    <img src="assets/images/7f71608c_16_9.jpg" alt="Forensic Realism Calibration of Heavy Linen Fabric: Building Camera-Grade Texture Without Generic AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO PROMPT REALISTIC FABRIC TEXTURES WITHOUT DIGITAL SMOOTHNESS</span>
-                <h3 class="case-title"><a href="posts/7f71608c.html">Forensic Realism Calibration of Heavy Linen Fabric: Building Camera-Grade Texture Without Generic AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-22</p>
-                <a href="posts/7f71608c.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO PROMPT REALISTIC FABRIC TEXTURES WITHOUT DIGITAL SMOOTHNESS</span>
+                <h3 class="post-card-title"><a href="posts/7f71608c.html">Forensic Realism Calibration of Heavy Linen Fabric: Building Camera-Grade Texture Without Generic AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Heavy linen fabric is one of the easiest subjects to reduce into repetitive AI aesthetics. Many generated images rely on generic texture amplification, exaggera...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-22</span>
+                    <span>•</span>
+                    <a href="posts/7f71608c.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/b22371ad_16_9.jpg" alt="Forensic Realism Study: Aging Ceramic Cup and Human Hand Detail in Camera-Grade Image Creation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/b22371ad.html">
+                    <img src="assets/images/b22371ad_16_9.jpg" alt="Forensic Realism Study: Aging Ceramic Cup and Human Hand Detail in Camera-Grade Image Creation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO PROMPT REALISTIC HAND DETAILS AND NATURAL FINGERS</span>
-                <h3 class="case-title"><a href="posts/b22371ad.html">Forensic Realism Study: Aging Ceramic Cup and Human Hand Detail in Camera-Grade Image Creation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-21</p>
-                <a href="posts/b22371ad.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO PROMPT REALISTIC HAND DETAILS AND NATURAL FINGERS</span>
+                <h3 class="post-card-title"><a href="posts/b22371ad.html">Forensic Realism Study: Aging Ceramic Cup and Human Hand Detail in Camera-Grade Image Creation</a></h3>
+                <p class="post-card-excerpt">Many AI-generated images still default to the same visual shortcuts: spotless skin, perfect objects, and exaggerated lighting. A close-up of hands holding an ol...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-21</span>
+                    <span>•</span>
+                    <a href="posts/b22371ad.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/38d320d2_16_9.jpg" alt="Forensic Realism Calibration: A Person in a Café Window Scene Beyond Default AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/38d320d2.html">
+                    <img src="assets/images/38d320d2_16_9.jpg" alt="Forensic Realism Calibration: A Person in a Café Window Scene Beyond Default AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: ELIMINATING NEON SATURATION IN AI LIGHTING</span>
-                <h3 class="case-title"><a href="posts/38d320d2.html">Forensic Realism Calibration: A Person in a Café Window Scene Beyond Default AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-21</p>
-                <a href="posts/38d320d2.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: ELIMINATING NEON SATURATION IN AI LIGHTING</span>
+                <h3 class="post-card-title"><a href="posts/38d320d2.html">Forensic Realism Calibration: A Person in a Café Window Scene Beyond Default AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Many AI-generated images still default to the same visual formula: perfect skin, immaculate interiors, cinematic lighting, and exaggerated clarity. While these ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-21</span>
+                    <span>•</span>
+                    <a href="posts/38d320d2.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/3e867e64_16_9.jpg" alt="Forensic Realism Calibration for Movie Set Lighting: Building a Camera-Grade Production Scene">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/3e867e64.html">
+                    <img src="assets/images/3e867e64_16_9.jpg" alt="Forensic Realism Calibration for Movie Set Lighting: Building a Camera-Grade Production Scene">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY YOU SHOULD STOP USING CINEMATIC LIGHTING IN PROMPTS</span>
-                <h3 class="case-title"><a href="posts/3e867e64.html">Forensic Realism Calibration for Movie Set Lighting: Building a Camera-Grade Production Scene</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-20</p>
-                <a href="posts/3e867e64.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY YOU SHOULD STOP USING CINEMATIC LIGHTING IN PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/3e867e64.html">Forensic Realism Calibration for Movie Set Lighting: Building a Camera-Grade Production Scene</a></h3>
+                <p class="post-card-excerpt">Movie production imagery is frequently reduced to a predictable collection of AI aesthetics: flawless actors, mathematically clean lighting, and synthetic lens ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-20</span>
+                    <span>•</span>
+                    <a href="posts/3e867e64.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0c9e5f99_16_9.jpg" alt="Forensic Symmetry: Camera-Grade Realism for a Vertically Split Human Face">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0c9e5f99.html">
+                    <img src="assets/images/0c9e5f99_16_9.jpg" alt="Forensic Symmetry: Camera-Grade Realism for a Vertically Split Human Face">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW AI MODELS GENERATE FAKE SYMMETRY THAT RUINS REALISM</span>
-                <h3 class="case-title"><a href="posts/0c9e5f99.html">Forensic Symmetry: Camera-Grade Realism for a Vertically Split Human Face</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-20</p>
-                <a href="posts/0c9e5f99.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW AI MODELS GENERATE FAKE SYMMETRY THAT RUINS REALISM</span>
+                <h3 class="post-card-title"><a href="posts/0c9e5f99.html">Forensic Symmetry: Camera-Grade Realism for a Vertically Split Human Face</a></h3>
+                <p class="post-card-excerpt">Artificial intelligence image generation frequently defaults to repetitive visual formulas: flawless skin, exaggerated sharpness, cinematic lighting, and symmet...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-20</span>
+                    <span>•</span>
+                    <a href="posts/0c9e5f99.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/88cb5b0c_16_9.jpg" alt="Forensic Realism Calibration for Business Team Stock Photos: Breaking the White Boardroom Template">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/88cb5b0c.html">
+                    <img src="assets/images/88cb5b0c_16_9.jpg" alt="Forensic Realism Calibration for Business Team Stock Photos: Breaking the White Boardroom Template">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY DEFAULT STOCK PHOTOGRAPHY STYLES FROM AI ARE BORING</span>
-                <h3 class="case-title"><a href="posts/88cb5b0c.html">Forensic Realism Calibration for Business Team Stock Photos: Breaking the White Boardroom Template</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-19</p>
-                <a href="posts/88cb5b0c.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY DEFAULT STOCK PHOTOGRAPHY STYLES FROM AI ARE BORING</span>
+                <h3 class="post-card-title"><a href="posts/88cb5b0c.html">Forensic Realism Calibration for Business Team Stock Photos: Breaking the White Boardroom Template</a></h3>
+                <p class="post-card-excerpt">Stock imagery of smiling business teams has become one of the most over-recycled visual patterns in AI image generation. The default result is often a collectio...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-19</span>
+                    <span>•</span>
+                    <a href="posts/88cb5b0c.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/121b931d_16_9.jpg" alt="Forensic Realism Calibration: Natural Skin Texture, Sideward Gaze, and Camera-Grade Portrait Authenticity">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/121b931d.html">
+                    <img src="assets/images/121b931d_16_9.jpg" alt="Forensic Realism Calibration: Natural Skin Texture, Sideward Gaze, and Camera-Grade Portrait Authenticity">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: FIXING THE FAKE WAXY LOOK IN AI PORTRAITS</span>
-                <h3 class="case-title"><a href="posts/121b931d.html">Forensic Realism Calibration: Natural Skin Texture, Sideward Gaze, and Camera-Grade Portrait Authenticity</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-19</p>
-                <a href="posts/121b931d.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: FIXING THE FAKE WAXY LOOK IN AI PORTRAITS</span>
+                <h3 class="post-card-title"><a href="posts/121b931d.html">Forensic Realism Calibration: Natural Skin Texture, Sideward Gaze, and Camera-Grade Portrait Authenticity</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits still default to the same repetitive aesthetic: perfectly smooth skin, symmetrical expressions, and exaggerated cinematic lighting. ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-19</span>
+                    <span>•</span>
+                    <a href="posts/121b931d.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/de01f691_16_9.jpg" alt="Forensic Eye Macro Realism: Calibrating Iris Detail, Window Catchlights, and Camera-Grade Authenticity">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/de01f691.html">
+                    <img src="assets/images/de01f691_16_9.jpg" alt="Forensic Eye Macro Realism: Calibrating Iris Detail, Window Catchlights, and Camera-Grade Authenticity">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO FIX GLASSY AND LIFELESS EYES IN AI GENERATIONS</span>
-                <h3 class="case-title"><a href="posts/de01f691.html">Forensic Eye Macro Realism: Calibrating Iris Detail, Window Catchlights, and Camera-Grade Authenticity</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-18</p>
-                <a href="posts/de01f691.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO FIX GLASSY AND LIFELESS EYES IN AI GENERATIONS</span>
+                <h3 class="post-card-title"><a href="posts/de01f691.html">Forensic Eye Macro Realism: Calibrating Iris Detail, Window Catchlights, and Camera-Grade Authenticity</a></h3>
+                <p class="post-card-excerpt">Macro eye imagery is one of the most over-optimized subjects in modern image generation. Many AI systems default to exaggerated sharpness, perfectly symmetrical...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-18</span>
+                    <span>•</span>
+                    <a href="posts/de01f691.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/aed0c413_16_9.jpg" alt="Forensic Realism Calibration: Capturing Authentic Laughter Without Default AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/aed0c413.html">
+                    <img src="assets/images/aed0c413_16_9.jpg" alt="Forensic Realism Calibration: Capturing Authentic Laughter Without Default AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO PROMPT NATURAL EXPRESSIONS IN AI MODELS INSTEAD OF FAKE SMILES</span>
-                <h3 class="case-title"><a href="posts/aed0c413.html">Forensic Realism Calibration: Capturing Authentic Laughter Without Default AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-18</p>
-                <a href="posts/aed0c413.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO PROMPT NATURAL EXPRESSIONS IN AI MODELS INSTEAD OF FAKE SMILES</span>
+                <h3 class="post-card-title"><a href="posts/aed0c413.html">Forensic Realism Calibration: Capturing Authentic Laughter Without Default AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Many image models still default to the same visual recipe: symmetrical faces, polished skin, perfectly timed smiles, and stylized lighting that rarely resembles...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-18</span>
+                    <span>•</span>
+                    <a href="posts/aed0c413.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/7e136f91_16_9.jpg" alt="Forensic Realism Calibration: Building a Camera-Grade Close-Up Portrait with Authentic Human Asymmetry">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/7e136f91.html">
+                    <img src="assets/images/7e136f91_16_9.jpg" alt="Forensic Realism Calibration: Building a Camera-Grade Close-Up Portrait with Authentic Human Asymmetry">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: BYPASSING THE PERFECT SYMMETRY TRAP IN AI FACES</span>
-                <h3 class="case-title"><a href="posts/7e136f91.html">Forensic Realism Calibration: Building a Camera-Grade Close-Up Portrait with Authentic Human Asymmetry</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-17</p>
-                <a href="posts/7e136f91.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: BYPASSING THE PERFECT SYMMETRY TRAP IN AI FACES</span>
+                <h3 class="post-card-title"><a href="posts/7e136f91.html">Forensic Realism Calibration: Building a Camera-Grade Close-Up Portrait with Authentic Human Asymmetry</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits still fall into the same repetitive aesthetic patterns: symmetrical faces, polished skin, dramatic lighting, and exaggerated clarity...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-17</span>
+                    <span>•</span>
+                    <a href="posts/7e136f91.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/b802f80a_16_9.jpg" alt="Forensic Realism of Backlit Dark Hair: Camera-Grade Analysis of Flyaway Strands and Natural Sunlight">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/b802f80a.html">
+                    <img src="assets/images/b802f80a_16_9.jpg" alt="Forensic Realism of Backlit Dark Hair: Camera-Grade Analysis of Flyaway Strands and Natural Sunlight">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO PROMPT REALISTIC HAIR TEXTURE WITHOUT PLASTIC SHEEN</span>
-                <h3 class="case-title"><a href="posts/b802f80a.html">Forensic Realism of Backlit Dark Hair: Camera-Grade Analysis of Flyaway Strands and Natural Sunlight</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-17</p>
-                <a href="posts/b802f80a.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO PROMPT REALISTIC HAIR TEXTURE WITHOUT PLASTIC SHEEN</span>
+                <h3 class="post-card-title"><a href="posts/b802f80a.html">Forensic Realism of Backlit Dark Hair: Camera-Grade Analysis of Flyaway Strands and Natural Sunlight</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits still fall into the same visual trap: repetitive beauty patterns, overly polished hair, and lighting that behaves more like a studio...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-17</span>
+                    <span>•</span>
+                    <a href="posts/b802f80a.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/406f22a5_16_9.jpg" alt="Forensic Realism Calibration: Capturing Authentic Age, Wrinkles, and Human Presence in Close-Up Portrait Photography">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/406f22a5.html">
+                    <img src="assets/images/406f22a5_16_9.jpg" alt="Forensic Realism Calibration: Capturing Authentic Age, Wrinkles, and Human Presence in Close-Up Portrait Photography">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: PROMPTING SKIN TEXTURE: HOW TO SHOW PORES AND NATURAL WRINKLES</span>
-                <h3 class="case-title"><a href="posts/406f22a5.html">Forensic Realism Calibration: Capturing Authentic Age, Wrinkles, and Human Presence in Close-Up Portrait Photography</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-16</p>
-                <a href="posts/406f22a5.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: PROMPTING SKIN TEXTURE: HOW TO SHOW PORES AND NATURAL WRINKLES</span>
+                <h3 class="post-card-title"><a href="posts/406f22a5.html">Forensic Realism Calibration: Capturing Authentic Age, Wrinkles, and Human Presence in Close-Up Portrait Photography</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits fall into the same visual trap: smooth skin, symmetrical faces, and generic cinematic lighting. While these conventions may appear a...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-16</span>
+                    <span>•</span>
+                    <a href="posts/406f22a5.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/b638d85c_16_9.jpg" alt="Forensic Skin Realism: Calibrating Macro Cheek Photography Beyond Generic AI Beauty">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/b638d85c.html">
+                    <img src="assets/images/b638d85c_16_9.jpg" alt="Forensic Skin Realism: Calibrating Macro Cheek Photography Beyond Generic AI Beauty">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO FIX PLASTIC SKIN IN CHATGPT AND MIDJOURNEY</span>
-                <h3 class="case-title"><a href="posts/b638d85c.html">Forensic Skin Realism: Calibrating Macro Cheek Photography Beyond Generic AI Beauty</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-16</p>
-                <a href="posts/b638d85c.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO FIX PLASTIC SKIN IN CHATGPT AND MIDJOURNEY</span>
+                <h3 class="post-card-title"><a href="posts/b638d85c.html">Forensic Skin Realism: Calibrating Macro Cheek Photography Beyond Generic AI Beauty</a></h3>
+                <p class="post-card-excerpt">Most AI-generated skin imagery still follows the same repetitive visual formula: poreless surfaces, exaggerated sharpness, and beauty-oriented cleanup that rare...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-16</span>
+                    <span>•</span>
+                    <a href="posts/b638d85c.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/29dfd44c_16_9.jpg" alt="Forensic Realism Calibration: Transforming a Generic Coffee Shop Illustration into a Camera-Grade Observation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/29dfd44c.html">
+                    <img src="assets/images/29dfd44c_16_9.jpg" alt="Forensic Realism Calibration: Transforming a Generic Coffee Shop Illustration into a Camera-Grade Observation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE PROBLEM WITH DEFAULT AI MODEL AESTHETICS</span>
-                <h3 class="case-title"><a href="posts/29dfd44c.html">Forensic Realism Calibration: Transforming a Generic Coffee Shop Illustration into a Camera-Grade Observation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-15</p>
-                <a href="posts/29dfd44c.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE PROBLEM WITH DEFAULT AI MODEL AESTHETICS</span>
+                <h3 class="post-card-title"><a href="posts/29dfd44c.html">Forensic Realism Calibration: Transforming a Generic Coffee Shop Illustration into a Camera-Grade Observation</a></h3>
+                <p class="post-card-excerpt">Many AI-generated coffee shop images begin from the same visual template: clean furniture, balanced composition, uniform lighting, and surfaces untouched by use...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-15</span>
+                    <span>•</span>
+                    <a href="posts/29dfd44c.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0afecbea_16_9.jpg" alt="Forensic Reality Calibration of a Glossy Ceramic Vase: From Studio Reflections to Camera-Grade Material Behavior">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0afecbea.html">
+                    <img src="assets/images/0afecbea_16_9.jpg" alt="Forensic Reality Calibration of a Glossy Ceramic Vase: From Studio Reflections to Camera-Grade Material Behavior">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE SECRET BEHIND THE FAKE GLOSSY SHEEN IN AI IMAGES</span>
-                <h3 class="case-title"><a href="posts/0afecbea.html">Forensic Reality Calibration of a Glossy Ceramic Vase: From Studio Reflections to Camera-Grade Material Behavior</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-15</p>
-                <a href="posts/0afecbea.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE SECRET BEHIND THE FAKE GLOSSY SHEEN IN AI IMAGES</span>
+                <h3 class="post-card-title"><a href="posts/0afecbea.html">Forensic Reality Calibration of a Glossy Ceramic Vase: From Studio Reflections to Camera-Grade Material Behavior</a></h3>
+                <p class="post-card-excerpt">Many AI-generated product images fall into the same visual trap: perfectly clean surfaces, mathematically uniform reflections, and exaggerated sharpness that ig...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-15</span>
+                    <span>•</span>
+                    <a href="posts/0afecbea.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/41c8b800_16_9.jpg" alt="Forensic Realism Calibration for Neutral Portrait Photography: Breaking the Repetition of AI Face Generation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/41c8b800.html">
+                    <img src="assets/images/41c8b800_16_9.jpg" alt="Forensic Realism Calibration for Neutral Portrait Photography: Breaking the Repetition of AI Face Generation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY DEFAULT DALL-E 3 PORTRAITS LACK SOUL</span>
-                <h3 class="case-title"><a href="posts/41c8b800.html">Forensic Realism Calibration for Neutral Portrait Photography: Breaking the Repetition of AI Face Generation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-14</p>
-                <a href="posts/41c8b800.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY DEFAULT DALL-E 3 PORTRAITS LACK SOUL</span>
+                <h3 class="post-card-title"><a href="posts/41c8b800.html">Forensic Realism Calibration for Neutral Portrait Photography: Breaking the Repetition of AI Face Generation</a></h3>
+                <p class="post-card-excerpt">The default visual language of many AI-generated portraits remains trapped in repetition. Faces become symmetrical, skin becomes sterile, lighting becomes cinem...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-14</span>
+                    <span>•</span>
+                    <a href="posts/41c8b800.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/70e7f191_16_9.jpg" alt="Forensic Realism Calibration for a Nighttime City Billboard Advertisement">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/70e7f191.html">
+                    <img src="assets/images/70e7f191_16_9.jpg" alt="Forensic Realism Calibration for a Nighttime City Billboard Advertisement">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE COMMERCIAL RENDER TRAP IN AI ART</span>
-                <h3 class="case-title"><a href="posts/70e7f191.html">Forensic Realism Calibration for a Nighttime City Billboard Advertisement</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-14</p>
-                <a href="posts/70e7f191.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE COMMERCIAL RENDER TRAP IN AI ART</span>
+                <h3 class="post-card-title"><a href="posts/70e7f191.html">Forensic Realism Calibration for a Nighttime City Billboard Advertisement</a></h3>
+                <p class="post-card-excerpt">Many AI-generated billboard scenes fall into a predictable visual pattern: spotless streets, flawless reflections, and exaggerated cinematic lighting. Real urba...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-14</span>
+                    <span>•</span>
+                    <a href="posts/70e7f191.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/65f8c29b_16_9.jpg" alt="Forensic Reality Calibration for Futuristic Game Interfaces: Replacing Synthetic Sharpness with Camera-Grade Visual Behavior">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/65f8c29b.html">
+                    <img src="assets/images/65f8c29b_16_9.jpg" alt="Forensic Reality Calibration for Futuristic Game Interfaces: Replacing Synthetic Sharpness with Camera-Grade Visual Behavior">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY DEFAULT MIDJOURNEY RENDERS LOOK LIKE VIDEO GAMES</span>
-                <h3 class="case-title"><a href="posts/65f8c29b.html">Forensic Reality Calibration for Futuristic Game Interfaces: Replacing Synthetic Sharpness with Camera-Grade Visual Behavior</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-13</p>
-                <a href="posts/65f8c29b.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY DEFAULT MIDJOURNEY RENDERS LOOK LIKE VIDEO GAMES</span>
+                <h3 class="post-card-title"><a href="posts/65f8c29b.html">Forensic Reality Calibration for Futuristic Game Interfaces: Replacing Synthetic Sharpness with Camera-Grade Visual Behavior</a></h3>
+                <p class="post-card-excerpt">Many AI-generated depictions of futuristic game interfaces fall into a predictable pattern: extreme saturation, flawless edge definition, and perfectly organize...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-13</span>
+                    <span>•</span>
+                    <a href="posts/65f8c29b.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/71783521_16_9.jpg" alt="Forensic Realism Calibration for Kitchen Imagery: Rebuilding Authentic Surface Behavior Beyond AI Gloss">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/71783521.html">
+                    <img src="assets/images/71783521_16_9.jpg" alt="Forensic Realism Calibration for Kitchen Imagery: Rebuilding Authentic Surface Behavior Beyond AI Gloss">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW AI GENERATORS MAKE EVERYTHING LOOK TOO PERFECT</span>
-                <h3 class="case-title"><a href="posts/71783521.html">Forensic Realism Calibration for Kitchen Imagery: Rebuilding Authentic Surface Behavior Beyond AI Gloss</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-13</p>
-                <a href="posts/71783521.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW AI GENERATORS MAKE EVERYTHING LOOK TOO PERFECT</span>
+                <h3 class="post-card-title"><a href="posts/71783521.html">Forensic Realism Calibration for Kitchen Imagery: Rebuilding Authentic Surface Behavior Beyond AI Gloss</a></h3>
+                <p class="post-card-excerpt">Many AI-generated kitchen images default to the same visual formula: spotless countertops, flawless cookware, and perfectly controlled lighting. While these out...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-13</span>
+                    <span>•</span>
+                    <a href="posts/71783521.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0ad5d6f9_16_9.jpg" alt="Forensic Reality Calibration: Reconstructing a Symmetrical Wax Showroom Dummy Beyond Default AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0ad5d6f9.html">
+                    <img src="assets/images/0ad5d6f9_16_9.jpg" alt="Forensic Reality Calibration: Reconstructing a Symmetrical Wax Showroom Dummy Beyond Default AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE UNCANNY VALLEY: WHY AI FACES LOOK LIKE CGI WAX FIGURES</span>
-                <h3 class="case-title"><a href="posts/0ad5d6f9.html">Forensic Reality Calibration: Reconstructing a Symmetrical Wax Showroom Dummy Beyond Default AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-12</p>
-                <a href="posts/0ad5d6f9.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE UNCANNY VALLEY: WHY AI FACES LOOK LIKE CGI WAX FIGURES</span>
+                <h3 class="post-card-title"><a href="posts/0ad5d6f9.html">Forensic Reality Calibration: Reconstructing a Symmetrical Wax Showroom Dummy Beyond Default AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Many AI-generated images of showroom dummies fall into the same repetitive pattern: exaggerated sharpness, flawless materials, sterile lighting, and unrealistic...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-12</span>
+                    <span>•</span>
+                    <a href="posts/0ad5d6f9.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/61839f9b_16_9.jpg" alt="Forensic Realism Calibration: Photographing Generic Printed Template Sheets on an Office Desk">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/61839f9b.html">
+                    <img src="assets/images/61839f9b_16_9.jpg" alt="Forensic Realism Calibration: Photographing Generic Printed Template Sheets on an Office Desk">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY STANDARD PROMPT TEMPLATES ARE DESTROYING YOUR CREATIVITY</span>
-                <h3 class="case-title"><a href="posts/61839f9b.html">Forensic Realism Calibration: Photographing Generic Printed Template Sheets on an Office Desk</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-12</p>
-                <a href="posts/61839f9b.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY STANDARD PROMPT TEMPLATES ARE DESTROYING YOUR CREATIVITY</span>
+                <h3 class="post-card-title"><a href="posts/61839f9b.html">Forensic Realism Calibration: Photographing Generic Printed Template Sheets on an Office Desk</a></h3>
+                <p class="post-card-excerpt">Images of office paperwork are frequently generated with the same repetitive visual language: perfectly aligned sheets, flawless lighting, immaculate desks, and...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-12</span>
+                    <span>•</span>
+                    <a href="posts/61839f9b.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/22f33e42_16_9.jpg" alt="Forensic Camera Realism: Calibrating a Tripod Setup Against Raw Brick Surface Behavior">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/22f33e42.html">
+                    <img src="assets/images/22f33e42_16_9.jpg" alt="Forensic Camera Realism: Calibrating a Tripod Setup Against Raw Brick Surface Behavior">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: STOP USING HYPERREALISTIC IN YOUR PROMPTS</span>
-                <h3 class="case-title"><a href="posts/22f33e42.html">Forensic Camera Realism: Calibrating a Tripod Setup Against Raw Brick Surface Behavior</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-11</p>
-                <a href="posts/22f33e42.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: STOP USING HYPERREALISTIC IN YOUR PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/22f33e42.html">Forensic Camera Realism: Calibrating a Tripod Setup Against Raw Brick Surface Behavior</a></h3>
+                <p class="post-card-excerpt">Many AI-generated images of camera equipment suffer from the same visual repetition: spotless gear, flawless textures, dramatic lighting, and exaggerated sharpn...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-11</span>
+                    <span>•</span>
+                    <a href="posts/22f33e42.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/8bad19a6_16_9.jpg" alt="Forensic Realism Calibration: Why a Waxy Plastic Mannequin Head Reveals the Limits of Synthetic Image Generation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/8bad19a6.html">
+                    <img src="assets/images/8bad19a6_16_9.jpg" alt="Forensic Realism Calibration: Why a Waxy Plastic Mannequin Head Reveals the Limits of Synthetic Image Generation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY PHOTOREALISTIC PROMPTS MAKE YOUR IMAGES LOOK LIKE PLASTIC</span>
-                <h3 class="case-title"><a href="posts/8bad19a6.html">Forensic Realism Calibration: Why a Waxy Plastic Mannequin Head Reveals the Limits of Synthetic Image Generation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-11</p>
-                <a href="posts/8bad19a6.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY PHOTOREALISTIC PROMPTS MAKE YOUR IMAGES LOOK LIKE PLASTIC</span>
+                <h3 class="post-card-title"><a href="posts/8bad19a6.html">Forensic Realism Calibration: Why a Waxy Plastic Mannequin Head Reveals the Limits of Synthetic Image Generation</a></h3>
+                <p class="post-card-excerpt">A waxy plastic mannequin head under harsh studio lights is an ideal test subject for realism calibration because it exposes many of the shortcuts hidden inside ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-11</span>
+                    <span>•</span>
+                    <a href="posts/8bad19a6.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/ebce58be_16_9.jpg" alt="How to Build Camera-Grade Realism for an Everyday Workspace Desk Without Falling Into Generic AI Aestics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/ebce58be.html">
+                    <img src="assets/images/ebce58be_16_9.jpg" alt="How to Build Camera-Grade Realism for an Everyday Workspace Desk Without Falling Into Generic AI Aestics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: DESK SETUP PROMPTS: HOW TO ADD REALISTIC CLUTTER AND CABLES</span>
-                <h3 class="case-title"><a href="posts/ebce58be.html">How to Build Camera-Grade Realism for an Everyday Workspace Desk Without Falling Into Generic AI Aestics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-10</p>
-                <a href="posts/ebce58be.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: DESK SETUP PROMPTS: HOW TO ADD REALISTIC CLUTTER AND CABLES</span>
+                <h3 class="post-card-title"><a href="posts/ebce58be.html">How to Build Camera-Grade Realism for an Everyday Workspace Desk Without Falling Into Generic AI Aestics</a></h3>
+                <p class="post-card-excerpt">Everyday workspaces are among the easiest subjects for AI image generators to oversimplify. The result is often the same spotless desk, perfectly aligned access...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-10</span>
+                    <span>•</span>
+                    <a href="posts/ebce58be.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/98c06172_16_9.jpg" alt="Forensic Realism Calibration for a Close-Up of Vintage Books, Wooden Shelves, and Sunlit Dust">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/98c06172.html">
+                    <img src="assets/images/98c06172_16_9.jpg" alt="Forensic Realism Calibration for a Close-Up of Vintage Books, Wooden Shelves, and Sunlit Dust">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CREATING AUTHENTIC HOME DECOR VISUALS: RUSTIC SHELVES AND DUST PARTICLES</span>
-                <h3 class="case-title"><a href="posts/98c06172.html">Forensic Realism Calibration for a Close-Up of Vintage Books, Wooden Shelves, and Sunlit Dust</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-10</p>
-                <a href="posts/98c06172.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CREATING AUTHENTIC HOME DECOR VISUALS: RUSTIC SHELVES AND DUST PARTICLES</span>
+                <h3 class="post-card-title"><a href="posts/98c06172.html">Forensic Realism Calibration for a Close-Up of Vintage Books, Wooden Shelves, and Sunlit Dust</a></h3>
+                <p class="post-card-excerpt">Artificial image generation often defaults to polished surfaces, symmetrical composition, and exaggerated texture, making ordinary scenes feel synthetic. A simp...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-10</span>
+                    <span>•</span>
+                    <a href="posts/98c06172.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/974b7a4b_16_9.jpg" alt="Camera-Grade Backyard Candid: Building Authentic Instant Film Realism Through Physical Observation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/974b7a4b.html">
+                    <img src="assets/images/974b7a4b_16_9.jpg" alt="Camera-Grade Backyard Candid: Building Authentic Instant Film Realism Through Physical Observation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: RECREATING POLAROID VINTAGE AESTHETICS USING THE 5 LAYERS FRAMEWORK</span>
-                <h3 class="case-title"><a href="posts/974b7a4b.html">Camera-Grade Backyard Candid: Building Authentic Instant Film Realism Through Physical Observation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-09</p>
-                <a href="posts/974b7a4b.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: RECREATING POLAROID VINTAGE AESTHETICS USING THE 5 LAYERS FRAMEWORK</span>
+                <h3 class="post-card-title"><a href="posts/974b7a4b.html">Camera-Grade Backyard Candid: Building Authentic Instant Film Realism Through Physical Observation</a></h3>
+                <p class="post-card-excerpt">Many AI-generated photographs still repeat the same polished visual formula: flawless faces, immaculate lighting, and perfectly balanced compositions. Real inst...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-09</span>
+                    <span>•</span>
+                    <a href="posts/974b7a4b.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/3d043961_16_9.jpg" alt="Forensic Camera Realism: Building an Authentic Photographer's Work Table Scene with Physical Fidelity">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/3d043961.html">
+                    <img src="assets/images/3d043961_16_9.jpg" alt="Forensic Camera Realism: Building an Authentic Photographer's Work Table Scene with Physical Fidelity">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE 5 LAYERS OF REALITY: HOW TO AUDIT ANY AI PROMPT FOR REALISM</span>
-                <h3 class="case-title"><a href="posts/3d043961.html">Forensic Camera Realism: Building an Authentic Photographer's Work Table Scene with Physical Fidelity</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-09</p>
-                <a href="posts/3d043961.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE 5 LAYERS OF REALITY: HOW TO AUDIT ANY AI PROMPT FOR REALISM</span>
+                <h3 class="post-card-title"><a href="posts/3d043961.html">Forensic Camera Realism: Building an Authentic Photographer's Work Table Scene with Physical Fidelity</a></h3>
+                <p class="post-card-excerpt">Artificial image generation often defaults to polished desks, flawless equipment, and dramatic lighting that repeat across countless outputs. A photographer's w...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-09</span>
+                    <span>•</span>
+                    <a href="posts/3d043961.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/02856e4c_16_9.jpg" alt="Forensic Realism Calibration for Aged Letters: Building Camera-Grade Authenticity Through Physical Evidence">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/02856e4c.html">
+                    <img src="assets/images/02856e4c_16_9.jpg" alt="Forensic Realism Calibration for Aged Letters: Building Camera-Grade Authenticity Through Physical Evidence">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: PROMPTING HISTORICAL SCENES: AUTHENTIC TIME WEAR AND ANTIQUE TEXTURES</span>
-                <h3 class="case-title"><a href="posts/02856e4c.html">Forensic Realism Calibration for Aged Letters: Building Camera-Grade Authenticity Through Physical Evidence</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-08</p>
-                <a href="posts/02856e4c.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: PROMPTING HISTORICAL SCENES: AUTHENTIC TIME WEAR AND ANTIQUE TEXTURES</span>
+                <h3 class="post-card-title"><a href="posts/02856e4c.html">Forensic Realism Calibration for Aged Letters: Building Camera-Grade Authenticity Through Physical Evidence</a></h3>
+                <p class="post-card-excerpt">Artificial image generation often defaults to polished nostalgia instead of documenting how physical objects actually age. Old letters are frequently rendered w...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-08</span>
+                    <span>•</span>
+                    <a href="posts/02856e4c.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/0f6ca9fa_16_9.jpg" alt="Camera-Grade Realism: Forensic Calibration of a Candid Window-Light Portrait">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/0f6ca9fa.html">
+                    <img src="assets/images/0f6ca9fa_16_9.jpg" alt="Camera-Grade Realism: Forensic Calibration of a Candid Window-Light Portrait">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW THE ALPHA REALISM GUIDE FIXES DEFAULT AI PORTRAIT ANOMALIES</span>
-                <h3 class="case-title"><a href="posts/0f6ca9fa.html">Camera-Grade Realism: Forensic Calibration of a Candid Window-Light Portrait</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-08</p>
-                <a href="posts/0f6ca9fa.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW THE ALPHA REALISM GUIDE FIXES DEFAULT AI PORTRAIT ANOMALIES</span>
+                <h3 class="post-card-title"><a href="posts/0f6ca9fa.html">Camera-Grade Realism: Forensic Calibration of a Candid Window-Light Portrait</a></h3>
+                <p class="post-card-excerpt">Modern image generators often converge toward the same polished portrait language: flawless skin, exaggerated lighting, and idealized facial balance. While visu...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-08</span>
+                    <span>•</span>
+                    <a href="posts/0f6ca9fa.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/f404c5b3_16_9.jpg" alt="Forensic Realism Calibration for Minimalist Leather Product Photography: Building Camera-Grade Authenticity">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/f404c5b3.html">
+                    <img src="assets/images/f404c5b3_16_9.jpg" alt="Forensic Realism Calibration for Minimalist Leather Product Photography: Building Camera-Grade Authenticity">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: TRANSFORMING FLAT PRODUCT RENDERS WITH CAMERA-GRADE PROMPT CALIBRATIONS</span>
-                <h3 class="case-title"><a href="posts/f404c5b3.html">Forensic Realism Calibration for Minimalist Leather Product Photography: Building Camera-Grade Authenticity</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-07</p>
-                <a href="posts/f404c5b3.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: TRANSFORMING FLAT PRODUCT RENDERS WITH CAMERA-GRADE PROMPT CALIBRATIONS</span>
+                <h3 class="post-card-title"><a href="posts/f404c5b3.html">Forensic Realism Calibration for Minimalist Leather Product Photography: Building Camera-Grade Authenticity</a></h3>
+                <p class="post-card-excerpt">Minimalist product photography often falls into repetitive AI aesthetics where every leather surface appears flawless, every concrete block looks newly manufact...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-07</span>
+                    <span>•</span>
+                    <a href="posts/f404c5b3.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/aec6bd0d_16_9.jpg" alt="Camera-Grade Realism for Candid Conversations: A Forensic Calibration Guide to Everyday Urban Photography">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/aec6bd0d.html">
+                    <img src="assets/images/aec6bd0d_16_9.jpg" alt="Camera-Grade Realism for Candid Conversations: A Forensic Calibration Guide to Everyday Urban Photography">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CAPTURING RAW HUMAN EMOTION: CANDID PHOTOGRAPHY PROMPTS USING ALPHA REALISM</span>
-                <h3 class="case-title"><a href="posts/aec6bd0d.html">Camera-Grade Realism for Candid Conversations: A Forensic Calibration Guide to Everyday Urban Photography</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-07</p>
-                <a href="posts/aec6bd0d.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CAPTURING RAW HUMAN EMOTION: CANDID PHOTOGRAPHY PROMPTS USING ALPHA REALISM</span>
+                <h3 class="post-card-title"><a href="posts/aec6bd0d.html">Camera-Grade Realism for Candid Conversations: A Forensic Calibration Guide to Everyday Urban Photography</a></h3>
+                <p class="post-card-excerpt">Many AI-generated images still default to polished symmetry, exaggerated sharpness, and repetitive cinematic styling. Genuine documentary photography behaves di...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-07</span>
+                    <span>•</span>
+                    <a href="posts/aec6bd0d.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/93df4abb_16_9.jpg" alt="Forensic Calibration of Classic Chrome Street Photography: Building Camera-Grade Realism Through Physical Observation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/93df4abb.html">
+                    <img src="assets/images/93df4abb_16_9.jpg" alt="Forensic Calibration of Classic Chrome Street Photography: Building Camera-Grade Realism Through Physical Observation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: FUJIFILM FILM SIMULATION RECIPES TRANSLATED INTO AI PROMPTS</span>
-                <h3 class="case-title"><a href="posts/93df4abb.html">Forensic Calibration of Classic Chrome Street Photography: Building Camera-Grade Realism Through Physical Observation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-06</p>
-                <a href="posts/93df4abb.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: FUJIFILM FILM SIMULATION RECIPES TRANSLATED INTO AI PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/93df4abb.html">Forensic Calibration of Classic Chrome Street Photography: Building Camera-Grade Realism Through Physical Observation</a></h3>
+                <p class="post-card-excerpt">Many AI-generated street photographs immediately reveal themselves through repeated visual formulas: immaculate skin, perfectly synchronized pedestrians, exagge...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-06</span>
+                    <span>•</span>
+                    <a href="posts/93df4abb.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/4e57029f_16_9.jpg" alt="Forensic Camera-Grade Realism: Rebuilding a Studio Portrait Beyond Default AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/4e57029f.html">
+                    <img src="assets/images/4e57029f_16_9.jpg" alt="Forensic Camera-Grade Realism: Rebuilding a Studio Portrait Beyond Default AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HASSELBLAD PORTRAIT SETTINGS FOR ULTRA-REALISTIC STUDIO LIGHTING PROMPTS</span>
-                <h3 class="case-title"><a href="posts/4e57029f.html">Forensic Camera-Grade Realism: Rebuilding a Studio Portrait Beyond Default AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-06</p>
-                <a href="posts/4e57029f.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HASSELBLAD PORTRAIT SETTINGS FOR ULTRA-REALISTIC STUDIO LIGHTING PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/4e57029f.html">Forensic Camera-Grade Realism: Rebuilding a Studio Portrait Beyond Default AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Studio portrait generation often defaults to repetitive AI aesthetics where flawless skin, exaggerated lighting, and excessive detail replace the physical behav...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-06</span>
+                    <span>•</span>
+                    <a href="posts/4e57029f.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/36419e43_16_9.jpg" alt="Camera-Grade Close-Up Portrait Realism: A Forensic Calibration Through the Five Layers of Reality">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/36419e43.html">
+                    <img src="assets/images/36419e43_16_9.jpg" alt="Camera-Grade Close-Up Portrait Realism: A Forensic Calibration Through the Five Layers of Reality">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: FREE PROMPT CALIBRATION SAMPLE: THE LEICA 50MM F/1.4 SETUP</span>
-                <h3 class="case-title"><a href="posts/36419e43.html">Camera-Grade Close-Up Portrait Realism: A Forensic Calibration Through the Five Layers of Reality</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-05</p>
-                <a href="posts/36419e43.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: FREE PROMPT CALIBRATION SAMPLE: THE LEICA 50MM F/1.4 SETUP</span>
+                <h3 class="post-card-title"><a href="posts/36419e43.html">Camera-Grade Close-Up Portrait Realism: A Forensic Calibration Through the Five Layers of Reality</a></h3>
+                <p class="post-card-excerpt">Artificial intelligence often defaults to repeating polished portrait aesthetics: flawless skin, symmetrical lighting, exaggerated sharpness, and generic beauty...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-05</span>
+                    <span>•</span>
+                    <a href="posts/36419e43.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/5946a728_16_9.jpg" alt="Forensic Realism Calibration for Workspace Photography: Turning Prompt Sheets into Camera-Grade Documentary Images">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/5946a728.html">
+                    <img src="assets/images/5946a728_16_9.jpg" alt="Forensic Realism Calibration for Workspace Photography: Turning Prompt Sheets into Camera-Grade Documentary Images">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: MASTER PROMPT TEMPLATE FOR DAILY REALISTIC CONTENT CREATION</span>
-                <h3 class="case-title"><a href="posts/5946a728.html">Forensic Realism Calibration for Workspace Photography: Turning Prompt Sheets into Camera-Grade Documentary Images</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-05</p>
-                <a href="posts/5946a728.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: MASTER PROMPT TEMPLATE FOR DAILY REALISTIC CONTENT CREATION</span>
+                <h3 class="post-card-title"><a href="posts/5946a728.html">Forensic Realism Calibration for Workspace Photography: Turning Prompt Sheets into Camera-Grade Documentary Images</a></h3>
+                <p class="post-card-excerpt">Artificial intelligence can produce convincing workspace imagery within seconds, yet many generated scenes still repeat the same polished visual language: spotl...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-05</span>
+                    <span>•</span>
+                    <a href="posts/5946a728.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/b0f6ff8b_16_9.jpg" alt="Forensic Camera Realism: Rebuilding a Premium Product Shot Beyond Default AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/b0f6ff8b.html">
+                    <img src="assets/images/b0f6ff8b_16_9.jpg" alt="Forensic Camera Realism: Rebuilding a Premium Product Shot Beyond Default AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CALIBRATING SONY A7R V PROMPTS FOR HIGH-RESOLUTION COMMERCIAL REALISM</span>
-                <h3 class="case-title"><a href="posts/b0f6ff8b.html">Forensic Camera Realism: Rebuilding a Premium Product Shot Beyond Default AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-04</p>
-                <a href="posts/b0f6ff8b.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CALIBRATING SONY A7R V PROMPTS FOR HIGH-RESOLUTION COMMERCIAL REALISM</span>
+                <h3 class="post-card-title"><a href="posts/b0f6ff8b.html">Forensic Camera Realism: Rebuilding a Premium Product Shot Beyond Default AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Many AI-generated product photographs immediately reveal themselves through repetitive visual habits: exaggerated sharpness, flawless materials, impossible refl...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-04</span>
+                    <span>•</span>
+                    <a href="posts/b0f6ff8b.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/b95ff6be_16_9.jpg" alt="Camera-Grade Realism: Forensic Calibration of a Hand Annotating a Printed Photograph">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/b95ff6be.html">
+                    <img src="assets/images/b95ff6be_16_9.jpg" alt="Camera-Grade Realism: Forensic Calibration of a Hand Annotating a Printed Photograph">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE 5-MINUTE AUDIT TO MAKE ANY AI PROMPT 10X MORE REALISTIC</span>
-                <h3 class="case-title"><a href="posts/b95ff6be.html">Camera-Grade Realism: Forensic Calibration of a Hand Annotating a Printed Photograph</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-04</p>
-                <a href="posts/b95ff6be.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE 5-MINUTE AUDIT TO MAKE ANY AI PROMPT 10X MORE REALISTIC</span>
+                <h3 class="post-card-title"><a href="posts/b95ff6be.html">Camera-Grade Realism: Forensic Calibration of a Hand Annotating a Printed Photograph</a></h3>
+                <p class="post-card-excerpt">Default AI image generation often turns ordinary scenes into repetitive visual clichés filled with flawless skin, immaculate surfaces, and cinematic lighting th...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-04</span>
+                    <span>•</span>
+                    <a href="posts/b95ff6be.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/58d6fc87_16_9.jpg" alt="Forensic Realism Calibration for Fashion Portraits: Building Camera-Grade Wool Coat Photography with Lexicon Shifts">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/58d6fc87.html">
+                    <img src="assets/images/58d6fc87_16_9.jpg" alt="Forensic Realism Calibration for Fashion Portraits: Building Camera-Grade Wool Coat Photography with Lexicon Shifts">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: BEST FILM STOCK SIMULATIONS FOR VINTAGE AI FASHION LOOKBOOK</span>
-                <h3 class="case-title"><a href="posts/58d6fc87.html">Forensic Realism Calibration for Fashion Portraits: Building Camera-Grade Wool Coat Photography with Lexicon Shifts</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-03</p>
-                <a href="posts/58d6fc87.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: BEST FILM STOCK SIMULATIONS FOR VINTAGE AI FASHION LOOKBOOK</span>
+                <h3 class="post-card-title"><a href="posts/58d6fc87.html">Forensic Realism Calibration for Fashion Portraits: Building Camera-Grade Wool Coat Photography with Lexicon Shifts</a></h3>
+                <p class="post-card-excerpt">Fashion portrait generation often falls into repetitive AI aesthetics where every image converges toward flawless skin, exaggerated lighting, and commercial per...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-03</span>
+                    <span>•</span>
+                    <a href="posts/58d6fc87.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/81620e24_16_9.jpg" alt="Camera-Grade Realism for Luxury Perfume Photography: A Forensic Calibration Guide Beyond Generic AI Aesthetics">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/81620e24.html">
+                    <img src="assets/images/81620e24_16_9.jpg" alt="Camera-Grade Realism for Luxury Perfume Photography: A Forensic Calibration Guide Beyond Generic AI Aesthetics">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CALIBRATING HASSELBLAD LOOK IN AI PROMPTS FOR LUXURY PRODUCTS</span>
-                <h3 class="case-title"><a href="posts/81620e24.html">Camera-Grade Realism for Luxury Perfume Photography: A Forensic Calibration Guide Beyond Generic AI Aesthetics</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-03</p>
-                <a href="posts/81620e24.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CALIBRATING HASSELBLAD LOOK IN AI PROMPTS FOR LUXURY PRODUCTS</span>
+                <h3 class="post-card-title"><a href="posts/81620e24.html">Camera-Grade Realism for Luxury Perfume Photography: A Forensic Calibration Guide Beyond Generic AI Aesthetics</a></h3>
+                <p class="post-card-excerpt">Luxury product photography often becomes trapped inside repetitive AI aesthetics: immaculate glass, exaggerated reflections, impossible contrast, and surfaces t...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-03</span>
+                    <span>•</span>
+                    <a href="posts/81620e24.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/c1d89428_16_9.jpg" alt="Camera-Grade Rain: Forensic Realism Calibration for Gloomy Urban Street Photography">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/c1d89428.html">
+                    <img src="assets/images/c1d89428_16_9.jpg" alt="Camera-Grade Rain: Forensic Realism Calibration for Gloomy Urban Street Photography">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: PROMPTING AVAILABLE LIGHT IN GLOOMY WEATHER: OVERCAST DAY PHYSICS</span>
-                <h3 class="case-title"><a href="posts/c1d89428.html">Camera-Grade Rain: Forensic Realism Calibration for Gloomy Urban Street Photography</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-02</p>
-                <a href="posts/c1d89428.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: PROMPTING AVAILABLE LIGHT IN GLOOMY WEATHER: OVERCAST DAY PHYSICS</span>
+                <h3 class="post-card-title"><a href="posts/c1d89428.html">Camera-Grade Rain: Forensic Realism Calibration for Gloomy Urban Street Photography</a></h3>
+                <p class="post-card-excerpt">Many AI-generated street scenes still repeat the same polished visual language: immaculate pavement, exaggerated reflections, dramatic contrast and perfectly ba...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-02</span>
+                    <span>•</span>
+                    <a href="posts/c1d89428.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/56bf3d99_16_9.jpg" alt="Forensic Sunset Photography: Reconstructing Lens Flare and Optical Reality Through Language">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/56bf3d99.html">
+                    <img src="assets/images/56bf3d99_16_9.jpg" alt="Forensic Sunset Photography: Reconstructing Lens Flare and Optical Reality Through Language">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: SIMULATING VINTAGE LENS FLARES AND OPTICAL ABERRATIONS IN PROMPTS</span>
-                <h3 class="case-title"><a href="posts/56bf3d99.html">Forensic Sunset Photography: Reconstructing Lens Flare and Optical Reality Through Language</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-02</p>
-                <a href="posts/56bf3d99.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: SIMULATING VINTAGE LENS FLARES AND OPTICAL ABERRATIONS IN PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/56bf3d99.html">Forensic Sunset Photography: Reconstructing Lens Flare and Optical Reality Through Language</a></h3>
+                <p class="post-card-excerpt">Artificial image generators often converge toward the same polished sunset aesthetic: flawless gradients, mathematically clean silhouettes, and exaggerated lens...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-02</span>
+                    <span>•</span>
+                    <a href="posts/56bf3d99.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/50724b06_16_9.jpg" alt="Camera-Grade Black and White Street Photography: Forensic Realism Under an Urban Bridge">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/50724b06.html">
+                    <img src="assets/images/50724b06_16_9.jpg" alt="Camera-Grade Black and White Street Photography: Forensic Realism Under an Urban Bridge">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: RECREATING HIGH-CONTRAST BLACK AND WHITE STREET PHOTOGRAPHY IN AI</span>
-                <h3 class="case-title"><a href="posts/50724b06.html">Camera-Grade Black and White Street Photography: Forensic Realism Under an Urban Bridge</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-01</p>
-                <a href="posts/50724b06.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: RECREATING HIGH-CONTRAST BLACK AND WHITE STREET PHOTOGRAPHY IN AI</span>
+                <h3 class="post-card-title"><a href="posts/50724b06.html">Camera-Grade Black and White Street Photography: Forensic Realism Under an Urban Bridge</a></h3>
+                <p class="post-card-excerpt">High-contrast black and white street photography often becomes trapped in repetitive AI aesthetics that rely on exaggerated contrast, flawless geometry, and ove...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-01</span>
+                    <span>•</span>
+                    <a href="posts/50724b06.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/88e100a6_16_9.jpg" alt="Camera-Grade Portrait Realism: Forensic Calibration of Micro-Contrast, Organic Sharpness, and Natural Color">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/88e100a6.html">
+                    <img src="assets/images/88e100a6_16_9.jpg" alt="Camera-Grade Portrait Realism: Forensic Calibration of Micro-Contrast, Organic Sharpness, and Natural Color">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: LEICA M10 CALIBRATION SETTINGS FOR MIDJOURNEY AND CHATGPT</span>
-                <h3 class="case-title"><a href="posts/88e100a6.html">Camera-Grade Portrait Realism: Forensic Calibration of Micro-Contrast, Organic Sharpness, and Natural Color</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-07-01</p>
-                <a href="posts/88e100a6.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: LEICA M10 CALIBRATION SETTINGS FOR MIDJOURNEY AND CHATGPT</span>
+                <h3 class="post-card-title"><a href="posts/88e100a6.html">Camera-Grade Portrait Realism: Forensic Calibration of Micro-Contrast, Organic Sharpness, and Natural Color</a></h3>
+                <p class="post-card-excerpt">Many AI-generated portraits immediately reveal themselves through repetitive visual habits: polished skin, exaggerated clarity, uniform lighting, and color that...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-07-01</span>
+                    <span>•</span>
+                    <a href="posts/88e100a6.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/f0fa1f2a_16_9.jpg" alt="Forensic Realism Calibration for Weathered Stone Walls: Building Camera-Grade Texture Through Physical Language">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/f0fa1f2a.html">
+                    <img src="assets/images/f0fa1f2a_16_9.jpg" alt="Forensic Realism Calibration for Weathered Stone Walls: Building Camera-Grade Texture Through Physical Language">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE MICRO-CONTRAST CALIBRATION GUIDE FOR DIGITAL CREATORS</span>
-                <h3 class="case-title"><a href="posts/f0fa1f2a.html">Forensic Realism Calibration for Weathered Stone Walls: Building Camera-Grade Texture Through Physical Language</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-30</p>
-                <a href="posts/f0fa1f2a.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE MICRO-CONTRAST CALIBRATION GUIDE FOR DIGITAL CREATORS</span>
+                <h3 class="post-card-title"><a href="posts/f0fa1f2a.html">Forensic Realism Calibration for Weathered Stone Walls: Building Camera-Grade Texture Through Physical Language</a></h3>
+                <p class="post-card-excerpt">Artificial image generation often defaults to polished stone textures with repetitive patterns, exaggerated sharpness, and synthetic surface uniformity. Real ma...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-30</span>
+                    <span>•</span>
+                    <a href="posts/f0fa1f2a.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/892d3262_16_9.jpg" alt="Forensic Lens Calibration: Building Camera-Grade Split-Screen Portrait Comparisons Through Physical Realism">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/892d3262.html">
+                    <img src="assets/images/892d3262_16_9.jpg" alt="Forensic Lens Calibration: Building Camera-Grade Split-Screen Portrait Comparisons Through Physical Realism">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: MIDJOURNEY V6 VS DALL-E 3: WHICH MODEL HANDLES THE 5 LAYERS BEST</span>
-                <h3 class="case-title"><a href="posts/892d3262.html">Forensic Lens Calibration: Building Camera-Grade Split-Screen Portrait Comparisons Through Physical Realism</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-30</p>
-                <a href="posts/892d3262.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: MIDJOURNEY V6 VS DALL-E 3: WHICH MODEL HANDLES THE 5 LAYERS BEST</span>
+                <h3 class="post-card-title"><a href="posts/892d3262.html">Forensic Lens Calibration: Building Camera-Grade Split-Screen Portrait Comparisons Through Physical Realism</a></h3>
+                <p class="post-card-excerpt">Artificial intelligence often defaults to visually repetitive portraits where every face appears polished, every lens behaves identically, and every image conve...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-30</span>
+                    <span>•</span>
+                    <a href="posts/892d3262.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/d7a02a01_16_9.jpg" alt="Camera-Grade Realism for Digital Guidebook Scenes: A Forensic Calibration Workflow">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/d7a02a01.html">
+                    <img src="assets/images/d7a02a01_16_9.jpg" alt="Camera-Grade Realism for Digital Guidebook Scenes: A Forensic Calibration Workflow">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: HOW TO GET THE ALPHA REALISM GUIDE TO SCALE YOUR CONTENT PIPELINE</span>
-                <h3 class="case-title"><a href="posts/d7a02a01.html">Camera-Grade Realism for Digital Guidebook Scenes: A Forensic Calibration Workflow</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-29</p>
-                <a href="posts/d7a02a01.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: HOW TO GET THE ALPHA REALISM GUIDE TO SCALE YOUR CONTENT PIPELINE</span>
+                <h3 class="post-card-title"><a href="posts/d7a02a01.html">Camera-Grade Realism for Digital Guidebook Scenes: A Forensic Calibration Workflow</a></h3>
+                <p class="post-card-excerpt">Artificial intelligence often defaults to polished product photography whenever it encounters simple desktop scenes. A tablet displaying a digital guidebook bes...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-29</span>
+                    <span>•</span>
+                    <a href="posts/d7a02a01.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/f7ad8fa2_16_9.jpg" alt="Forensic Realism for AI Images: Building a Believable Computer Screen Chat Interface">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/f7ad8fa2.html">
+                    <img src="assets/images/f7ad8fa2_16_9.jpg" alt="Forensic Realism for AI Images: Building a Believable Computer Screen Chat Interface">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: CUSTOM GPT CRUEL RAW REALISM: HOW TO DOUBLE YOUR GENERATION SPEED</span>
-                <h3 class="case-title"><a href="posts/f7ad8fa2.html">Forensic Realism for AI Images: Building a Believable Computer Screen Chat Interface</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-29</p>
-                <a href="posts/f7ad8fa2.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: CUSTOM GPT CRUEL RAW REALISM: HOW TO DOUBLE YOUR GENERATION SPEED</span>
+                <h3 class="post-card-title"><a href="posts/f7ad8fa2.html">Forensic Realism for AI Images: Building a Believable Computer Screen Chat Interface</a></h3>
+                <p class="post-card-excerpt">Most AI-generated images of computer screens immediately reveal themselves through repetitive visual language. Screens become impossibly clean, reflections disa...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-29</span>
+                    <span>•</span>
+                    <a href="posts/f7ad8fa2.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/a36800c6_16_9.jpg" alt="Camera-Grade Portrait Realism: Forensic Calibration Through Five Layers of Reality">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/a36800c6.html">
+                    <img src="assets/images/a36800c6_16_9.jpg" alt="Camera-Grade Portrait Realism: Forensic Calibration Through Five Layers of Reality">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: RECREATING KODAK PORTRA 400 AESTHETIC: PROMPT RECIPE AND SETTINGS</span>
-                <h3 class="case-title"><a href="posts/a36800c6.html">Camera-Grade Portrait Realism: Forensic Calibration Through Five Layers of Reality</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-28</p>
-                <a href="posts/a36800c6.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: RECREATING KODAK PORTRA 400 AESTHETIC: PROMPT RECIPE AND SETTINGS</span>
+                <h3 class="post-card-title"><a href="posts/a36800c6.html">Camera-Grade Portrait Realism: Forensic Calibration Through Five Layers of Reality</a></h3>
+                <p class="post-card-excerpt">Portrait generation often defaults to polished faces, flawless lighting, and repetitive visual formulas that quickly reveal artificial origins. Genuine realism ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-28</span>
+                    <span>•</span>
+                    <a href="posts/a36800c6.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/10e700ab_16_9.jpg" alt="Camera-Grade Raspberry Macro Photography: A Five-Layer Reality Calibration for Authentic Surface Detail">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/10e700ab.html">
+                    <img src="assets/images/10e700ab_16_9.jpg" alt="Camera-Grade Raspberry Macro Photography: A Five-Layer Reality Calibration for Authentic Surface Detail">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: LENS CALIBRATION SETTINGS FOR MACRO FOOD PHOTOGRAPHY PROMPTS</span>
-                <h3 class="case-title"><a href="posts/10e700ab.html">Camera-Grade Raspberry Macro Photography: A Five-Layer Reality Calibration for Authentic Surface Detail</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-28</p>
-                <a href="posts/10e700ab.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: LENS CALIBRATION SETTINGS FOR MACRO FOOD PHOTOGRAPHY PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/10e700ab.html">Camera-Grade Raspberry Macro Photography: A Five-Layer Reality Calibration for Authentic Surface Detail</a></h3>
+                <p class="post-card-excerpt">Macro photography is often reduced to a predictable AI formula where every fruit becomes perfectly symmetrical, every droplet is identical, and every surface ap...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-28</span>
+                    <span>•</span>
+                    <a href="posts/10e700ab.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/6e38b910_16_9.jpg" alt="Camera-Grade Night Street Realism: Forensic Calibration of Neon Reflections, Wet Asphalt, and Authentic Urban Shadows">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/6e38b910.html">
+                    <img src="assets/images/6e38b910_16_9.jpg" alt="Camera-Grade Night Street Realism: Forensic Calibration of Neon Reflections, Wet Asphalt, and Authentic Urban Shadows">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: RECREATING AVAILABLE LIGHT IN NIGHT STREET PHOTOGRAPHY PROMPTS</span>
-                <h3 class="case-title"><a href="posts/6e38b910.html">Camera-Grade Night Street Realism: Forensic Calibration of Neon Reflections, Wet Asphalt, and Authentic Urban Shadows</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-27</p>
-                <a href="posts/6e38b910.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: RECREATING AVAILABLE LIGHT IN NIGHT STREET PHOTOGRAPHY PROMPTS</span>
+                <h3 class="post-card-title"><a href="posts/6e38b910.html">Camera-Grade Night Street Realism: Forensic Calibration of Neon Reflections, Wet Asphalt, and Authentic Urban Shadows</a></h3>
+                <p class="post-card-excerpt">Night street photography often becomes trapped inside repetitive AI aesthetics where every neon reflection looks symmetrical, every shadow appears intentionally...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-27</span>
+                    <span>•</span>
+                    <a href="posts/6e38b910.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/d5557ac6_16_9.jpg" alt="Camera-Grade Realism: How to Photograph a Photographer Holding a Printed Guidebook Beside a Camera Bag">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/d5557ac6.html">
+                    <img src="assets/images/d5557ac6_16_9.jpg" alt="Camera-Grade Realism: How to Photograph a Photographer Holding a Printed Guidebook Beside a Camera Bag">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: ALPHA REALISM GUIDE: COMPLETE PROMPT TEMPLATES FOR CREATORS</span>
-                <h3 class="case-title"><a href="posts/d5557ac6.html">Camera-Grade Realism: How to Photograph a Photographer Holding a Printed Guidebook Beside a Camera Bag</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-27</p>
-                <a href="posts/d5557ac6.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: ALPHA REALISM GUIDE: COMPLETE PROMPT TEMPLATES FOR CREATORS</span>
+                <h3 class="post-card-title"><a href="posts/d5557ac6.html">Camera-Grade Realism: How to Photograph a Photographer Holding a Printed Guidebook Beside a Camera Bag</a></h3>
+                <p class="post-card-excerpt">Most AI-generated photography still falls into the same visual trap: immaculate lighting, spotless surfaces, flawless materials, and subjects that appear staged...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-27</span>
+                    <span>•</span>
+                    <a href="posts/d5557ac6.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/86fb81ff_16_9.jpg" alt="Forensic Retail Realism: Building Authentic Clothing Rack Catalog Photography Without CGI Artifacts">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/86fb81ff.html">
+                    <img src="assets/images/86fb81ff_16_9.jpg" alt="Forensic Retail Realism: Building Authentic Clothing Rack Catalog Photography Without CGI Artifacts">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: THE GENERIC CATALOG LOOK OF DEFAULT AI MODELS</span>
-                <h3 class="case-title"><a href="posts/86fb81ff.html">Forensic Retail Realism: Building Authentic Clothing Rack Catalog Photography Without CGI Artifacts</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-26</p>
-                <a href="posts/86fb81ff.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: THE GENERIC CATALOG LOOK OF DEFAULT AI MODELS</span>
+                <h3 class="post-card-title"><a href="posts/86fb81ff.html">Forensic Retail Realism: Building Authentic Clothing Rack Catalog Photography Without CGI Artifacts</a></h3>
+                <p class="post-card-excerpt">Authentic retail photography depends less on visual perfection and more on believable information behavior. A clothing rack photographed inside a functioning sh...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-26</span>
+                    <span>•</span>
+                    <a href="posts/86fb81ff.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/8abeacb1_16_9.jpg" alt="Forensic Realism Calibration: Examining Synthetic Face Grids Through Documentary Observation">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/8abeacb1.html">
+                    <img src="assets/images/8abeacb1_16_9.jpg" alt="Forensic Realism Calibration: Examining Synthetic Face Grids Through Documentary Observation">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WHY DOES ALL AI ART LOOK EXACTLY THE SAME?</span>
-                <h3 class="case-title"><a href="posts/8abeacb1.html">Forensic Realism Calibration: Examining Synthetic Face Grids Through Documentary Observation</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-26</p>
-                <a href="posts/8abeacb1.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WHY DOES ALL AI ART LOOK EXACTLY THE SAME?</span>
+                <h3 class="post-card-title"><a href="posts/8abeacb1.html">Forensic Realism Calibration: Examining Synthetic Face Grids Through Documentary Observation</a></h3>
+                <p class="post-card-excerpt">Artificial face generation systems often appear convincing when evaluated individually, yet forensic observation changes when many outputs are displayed simulta...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-26</span>
+                    <span>•</span>
+                    <a href="posts/8abeacb1.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
-        <div class="case-card">
-            <div class="case-img-box">
-                <img src="assets/images/mock-case-1_16_9.jpg" alt="The Warm Glow: Master Ambient Light in AI Bedroom Renders">
+        <article class="post-card">
+            <div class="post-img-box">
+                <a href="posts/mock-case-1.html">
+                    <img src="assets/images/mock-case-1_16_9.jpg" alt="The Warm Glow: Master Ambient Light in AI Bedroom Renders">
+                </a>
             </div>
-            <div class="case-content">
-                <span class="case-tag">TREND: WARM MINIMALIST BEDROOM</span>
-                <h3 class="case-title"><a href="posts/mock-case-1.html">The Warm Glow: Master Ambient Light in AI Bedroom Renders</a></h3>
-                <p class="case-date">CALIBRATION DATE: 2026-06-18</p>
-                <a href="posts/mock-case-1.html" class="case-link">EXAMINE DOSSIER →</a>
+            <div class="post-card-content">
+                <span class="post-card-tag">TREND: WARM MINIMALIST BEDROOM</span>
+                <h3 class="post-card-title"><a href="posts/mock-case-1.html">The Warm Glow: Master Ambient Light in AI Bedroom Renders</a></h3>
+                <p class="post-card-excerpt">To achieve absolute realism in indoor setups, we must understand the behavior of available ambient light. Most default AI models generate a synthetic glow that ...</p>
+                <div class="post-card-meta">
+                    <span>PUBLISHED: 2026-06-18</span>
+                    <span>•</span>
+                    <a href="posts/mock-case-1.html" class="post-card-link">EXAMINE DOSSIER →</a>
+                </div>
             </div>
-        </div>
+        </article>
         
         </main>
 
-        <!-- Programmatic SEO Directories -->
-        <section class="pseo-section">
-            <h3>Camera &amp; Lens Calibration Directories</h3>
-            <div class="pseo-grid">
-                <div>
-                    <h4 style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px;">CAMERAS INTEL</h4>
-                    <ul class="pseo-list">
-                        <li><a href="cameras/leica-m10.html">Realism calibration guidelines for Leica M10</a></li><li><a href="cameras/fujifilm-x-t5.html">Realism calibration guidelines for Fujifilm X-T5</a></li><li><a href="cameras/sony-a7r-v.html">Realism calibration guidelines for Sony a7R V</a></li><li><a href="cameras/hasselblad-x2d.html">Realism calibration guidelines for Hasselblad X2D 100C</a></li><li><a href="cameras/canon-eos-r5.html">Realism calibration guidelines for Canon EOS R5</a></li><li><a href="cameras/nikon-z9.html">Realism calibration guidelines for Nikon Z9</a></li><li><a href="cameras/kodak-portra-400.html">Realism calibration guidelines for Kodak Portra 400 (Emulated)</a></li><li><a href="cameras/fujifilm-superia-400.html">Realism calibration guidelines for Fujifilm Superia 400 (Emulated)</a></li><li><a href="cameras/phase-one-xf.html">Realism calibration guidelines for Phase One XF IQ4</a></li><li><a href="cameras/fujifilm-gfx-100s.html">Realism calibration guidelines for Fujifilm GFX 100S</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px;">LENSES OPTICS</h4>
-                    <ul class="pseo-list">
-                        <li><a href="lenses/50mm-f1-2.html">Optical aberration calibration for 50mm f/1.2</a></li><li><a href="lenses/50mm-f1-4.html">Optical aberration calibration for 50mm f/1.4</a></li><li><a href="lenses/35mm-f1-4.html">Optical aberration calibration for 35mm f/1.4</a></li><li><a href="lenses/85mm-f1-2.html">Optical aberration calibration for 85mm f/1.2</a></li><li><a href="lenses/85mm-f1-4.html">Optical aberration calibration for 85mm f/1.4</a></li><li><a href="lenses/24mm-f1-4.html">Optical aberration calibration for 24mm f/1.4</a></li><li><a href="lenses/135mm-f1-8.html">Optical aberration calibration for 135mm f/1.8</a></li><li><a href="lenses/100mm-macro-f2-8.html">Optical aberration calibration for 100mm Macro f/2.8</a></li><li><a href="lenses/24-70mm-f2-8.html">Optical aberration calibration for 24-70mm f/2.8</a></li><li><a href="lenses/70-200mm-f2-8.html">Optical aberration calibration for 70-200mm f/2.8</a></li>
-                    </ul>
-                </div>
+        <!-- Right Sidebar Column -->
+        <aside class="sidebar-column" id="directories">
+            
+            <!-- Newsletter Subscription Widget -->
+            <div class="widget newsletter-widget">
+                <h3>Subscribe to Realism Briefing</h3>
+                <p>Get daily cause-and-effect prompting frameworks, sensor calibrations, and lexicon updates to bypass plastic AI skin.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="Your work email" required class="input-email">
+                    <button type="submit" class="btn-subscribe">Get Free Calibration Pack</button>
+                </form>
             </div>
-        </section>
+            
+            <!-- Camera Directories Widget -->
+            <div class="widget">
+                <h3 class="widget-title">Camera Sensor Emulators</h3>
+                <ul class="widget-list">
+                    <li><a href="cameras/leica-m10.html">Leica M10 calibration</a></li><li><a href="cameras/fujifilm-x-t5.html">Fujifilm X-T5 calibration</a></li><li><a href="cameras/sony-a7r-v.html">Sony a7R V calibration</a></li><li><a href="cameras/hasselblad-x2d.html">Hasselblad X2D 100C calibration</a></li><li><a href="cameras/canon-eos-r5.html">Canon EOS R5 calibration</a></li><li><a href="cameras/nikon-z9.html">Nikon Z9 calibration</a></li><li><a href="cameras/kodak-portra-400.html">Kodak Portra 400 (Emulated) calibration</a></li><li><a href="cameras/fujifilm-superia-400.html">Fujifilm Superia 400 (Emulated) calibration</a></li><li><a href="cameras/phase-one-xf.html">Phase One XF IQ4 calibration</a></li><li><a href="cameras/fujifilm-gfx-100s.html">Fujifilm GFX 100S calibration</a></li>
+                </ul>
+            </div>
+
+            <!-- Lens Directories Widget -->
+            <div class="widget">
+                <h3 class="widget-title">Optics Aberration Emulators</h3>
+                <ul class="widget-list">
+                    <li><a href="lenses/50mm-f1-2.html">50mm f/1.2 optics</a></li><li><a href="lenses/50mm-f1-4.html">50mm f/1.4 optics</a></li><li><a href="lenses/35mm-f1-4.html">35mm f/1.4 optics</a></li><li><a href="lenses/85mm-f1-2.html">85mm f/1.2 optics</a></li><li><a href="lenses/85mm-f1-4.html">85mm f/1.4 optics</a></li><li><a href="lenses/24mm-f1-4.html">24mm f/1.4 optics</a></li><li><a href="lenses/135mm-f1-8.html">135mm f/1.8 optics</a></li><li><a href="lenses/100mm-macro-f2-8.html">100mm Macro f/2.8 optics</a></li><li><a href="lenses/24-70mm-f2-8.html">24-70mm f/2.8 optics</a></li><li><a href="lenses/70-200mm-f2-8.html">70-200mm f/2.8 optics</a></li>
+                </ul>
+            </div>
+
+        </aside>
 
     </div>
 
     <footer>
-        &copy; 2026 ALPHA REALISM. ALL RIGHTS RESERVED. LAB LEVEL ACCESS ONLY.
+        &copy; 2026 ALPHA REALISM. ALL RIGHTS RESERVED. GLOBAL LEVEL ACCESS ONLY.
     </footer>
 
 </body>

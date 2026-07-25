@@ -7,20 +7,21 @@
     <meta name="description" content="Technical forensic analysis of AI realism prompts for: FIXING THE CGI METAL REFLECTIONS IN AI PRODUCT RENDERS. Bypassing plastic skin and synthetic artifacts.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F4F4F6;
+            --bg-color: #F8FAFC;
             --container-bg: #FFFFFF;
-            --text-main: #1A1A1A;
-            --text-muted: #66666E;
-            --accent: #FF6B00;
-            --border-color: #D1D1D6;
-            --font-main: 'Inter', sans-serif;
-            --font-title: 'Outfit', sans-serif;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --accent: #1880BA;
+            --accent-hover: #1B60AA;
+            --border-color: #E2E8F0;
+            --font-main: 'Open Sans', sans-serif;
+            --font-title: 'DM Sans', sans-serif;
             --font-mono: 'Fira Code', monospace;
-            --win-color: #007D8C;
-            --lose-color: #C1272D;
+            --win-color: #2F855A;
+            --lose-color: #C53030;
         }
 
         * {
@@ -41,10 +42,9 @@
         .meta-edge-top {
             font-family: var(--font-mono);
             font-size: 11px;
-            color: var(--text-muted);
-            background: #E5E5EA;
+            color: #FFFFFF;
+            background: var(--accent-hover);
             padding: 8px 24px;
-            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             overflow: hidden;
@@ -58,47 +58,33 @@
             border: 1px solid var(--border-color);
             padding: 40px;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
-
-        /* Calibration Corners */
-        .container::before, .container::after,
-        .container-inner::before, .container-inner::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-color: var(--accent);
-            border-style: solid;
-            opacity: 0.8;
-        }
-        /* Top Left */
-        .container::before { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
-        /* Top Right */
-        .container::after { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
 
         header {
             margin-bottom: 30px;
-            border-bottom: 2px solid var(--text-main);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
         }
 
         .forensic-bar {
-            font-family: var(--font-mono);
-            font-size: 11px;
+            font-family: var(--font-title);
+            font-size: 13px;
             color: var(--accent);
-            letter-spacing: 1px;
+            font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         h1 {
             font-family: var(--font-title);
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.8px;
-            color: var(--text-main);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+            color: #1A202C;
         }
 
         .post-meta {
@@ -113,16 +99,17 @@
         /* Image Display */
         .specimen-display {
             border: 1px solid var(--border-color);
-            background: #E5E5EA;
+            background: #F8FAFC;
             padding: 10px;
             margin: 30px 0;
-            position: relative;
+            border-radius: 6px;
         }
 
         .specimen-display img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 4px;
             border: 1px solid var(--border-color);
         }
 
@@ -137,7 +124,7 @@
         /* Content Sections */
         .article-content {
             font-size: 16px;
-            color: #333333;
+            color: #4A5568;
         }
 
         .article-content p {
@@ -150,20 +137,23 @@
             font-weight: bold;
         }
 
+        .article-content a:hover {
+            color: var(--accent-hover);
+        }
+
         .tech-dossier {
-            background-color: #F8F8FA;
+            background-color: #F8FAFC;
             border: 1px solid var(--border-color);
             padding: 25px;
-            border-radius: 4px;
+            border-radius: 6px;
             margin: 30px 0;
         }
 
         .dossier-title {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 1.5px;
+            font-family: var(--font-title);
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A202C;
             margin-bottom: 15px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
@@ -180,16 +170,20 @@
         .layer-row {
             display: flex;
             font-size: 14px;
-            border-bottom: 1px dashed #E5E5EA;
-            padding-bottom: 6px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
         }
 
         .layer-name {
             font-family: var(--font-mono);
             font-weight: bold;
-            color: var(--text-main);
+            color: var(--accent-hover);
             width: 150px;
             flex-shrink: 0;
+        }
+
+        .layer-val {
+            color: #4A5568;
         }
 
         /* Shift table */
@@ -202,7 +196,7 @@
 
         .shift-table th, .shift-table td {
             text-align: left;
-            padding: 10px;
+            padding: 12px;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -211,24 +205,27 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 11px;
+            font-family: var(--font-mono);
         }
 
         .bad-term {
             color: var(--lose-color);
             text-decoration: line-through;
+            font-family: var(--font-mono);
         }
 
         .good-term {
             color: var(--win-color);
-            font-weight: 500;
+            font-weight: 600;
+            font-family: var(--font-mono);
         }
 
         /* Monospace Code Block */
         .code-console {
-            background: #1A1A1F;
-            color: #E2E2E9;
+            background: #1A202C;
+            color: #E2E8F0;
             padding: 20px;
-            border-radius: 4px;
+            border-radius: 6px;
             font-family: var(--font-mono);
             font-size: 13px;
             overflow-x: auto;
@@ -248,44 +245,47 @@
 
         /* CTA box */
         .cta-box {
-            border: 2px solid var(--accent);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent);
             padding: 30px;
-            background-color: rgba(255, 107, 0, 0.03);
+            background: linear-gradient(135deg, #1B60AA 0%, #1880BA 100%);
             text-align: center;
             margin: 40px 0;
-            position: relative;
+            border-radius: 6px;
+            color: #FFFFFF;
         }
 
         .cta-box h3 {
             font-family: var(--font-title);
             font-size: 22px;
             margin-bottom: 10px;
+            color: #FFFFFF;
         }
 
         .cta-box p {
             font-size: 14px;
-            color: var(--text-muted);
+            color: #E2E8F0;
             margin-bottom: 20px;
         }
 
         .btn-cta {
             display: inline-block;
-            background-color: var(--accent);
-            color: #FFFFFF;
+            background-color: #FFFFFF;
+            color: var(--accent-hover);
             font-family: var(--font-title);
             font-weight: bold;
             text-decoration: none;
             padding: 12px 30px;
             font-size: 15px;
             border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.2s;
         }
 
         .btn-cta:hover {
-            background-color: #E05E00;
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+            background-color: #F8FAFC;
             transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         /* Evolution Gallery */
@@ -305,13 +305,15 @@
         .gallery-item {
             border: 1px solid var(--border-color);
             padding: 8px;
-            background: #F8F8FA;
+            background: #F8FAFC;
+            border-radius: 4px;
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 2px;
         }
 
         .gallery-meta {
@@ -330,7 +332,8 @@
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            background-color: #E5E5EA;
+            background-color: #1A202C;
+            color: #A0AEC0;
         }
 
         .back-link {
