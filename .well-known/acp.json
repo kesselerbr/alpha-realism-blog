@@ -4,6 +4,12 @@
     "version": "1.0.0"
   },
   "api_base_url": "https://buy.stripe.com/cNiaEZ0h4b2q21XeW69ws00",
+  "transports": [
+    {
+      "type": "http",
+      "endpoint": "https://buy.stripe.com/cNiaEZ0h4b2q21XeW69ws00"
+    }
+  ],
   "capabilities": {
     "services": [
       "checkout"
