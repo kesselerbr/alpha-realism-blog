@@ -1,0 +1,16 @@
+{
+  "serverInfo": {
+    "name": "Alpha Realism Calibration Server",
+    "version": "1.0.0",
+    "description": "Model Context Protocol server exposing real-world camera optics and physical surface calibration skills for AI agents."
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://www.aialpharealism.online/llms.txt"
+  },
+  "capabilities": {
+    "prompts": true,
+    "resources": true,
+    "tools": true
+  }
+}

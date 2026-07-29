@@ -1,0 +1,20 @@
+{
+  "issuer": "https://www.aialpharealism.online/",
+  "authorization_endpoint": "https://www.aialpharealism.online/",
+  "token_endpoint": "https://www.aialpharealism.online/",
+  "jwks_uri": "https://www.aialpharealism.online/",
+  "grant_types_supported": [
+    "implicit",
+    "authorization_code"
+  ],
+  "agent_auth": {
+    "register_uri": "https://www.aialpharealism.online/auth.md",
+    "supported_identity_types": [
+      "anonymous",
+      "agent"
+    ],
+    "supported_credential_types": [
+      "public"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.aialpharealism.online/",
+      "service-desc": [
+        {
+          "href": "https://www.aialpharealism.online/llms.txt",
+          "type": "text/markdown"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.aialpharealism.online/",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://www.aialpharealism.online/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

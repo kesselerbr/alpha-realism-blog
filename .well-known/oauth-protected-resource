@@ -1,0 +1,10 @@
+{
+  "resource": "https://www.aialpharealism.online/",
+  "authorization_servers": [
+    "https://www.aialpharealism.online/"
+  ],
+  "scopes_supported": [
+    "read",
+    "checkout"
+  ]
+}

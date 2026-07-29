@@ -1,0 +1,7 @@
+{
+  "protocol": "ucp",
+  "version": "1.0.0",
+  "services": {
+    "checkout": "https://buy.stripe.com/cNiaEZ0h4b2q21XeW69ws00"
+  }
+}
