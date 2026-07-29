@@ -1,8 +1,8 @@
 {
-  "issuer": "https://www.aialpharealism.online/",
-  "authorization_endpoint": "https://www.aialpharealism.online/",
-  "token_endpoint": "https://www.aialpharealism.online/",
-  "jwks_uri": "https://www.aialpharealism.online/",
+  "issuer": "https://www.aialpharealism.online",
+  "authorization_endpoint": "https://www.aialpharealism.online",
+  "token_endpoint": "https://www.aialpharealism.online",
+  "jwks_uri": "https://www.aialpharealism.online",
   "grant_types_supported": [
     "implicit",
     "authorization_code"
@@ -14,7 +14,8 @@
       "agent"
     ],
     "supported_credential_types": [
-      "public"
+      "public",
+      "bearer"
     ]
   }
 }

@@ -41,6 +41,24 @@
       ]
     },
     {
+      "source": "/.well-known/oauth-protected-resource",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        }
+      ]
+    },
+    {
       "source": "/.well-known/api-catalog",
       "headers": [
         {
@@ -50,9 +68,9 @@
       ]
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "^/$",
+      "source": "/",
       "has": [
         {
           "type": "header",
@@ -60,7 +78,7 @@
           "value": ".*text/markdown.*"
         }
       ],
-      "dest": "/llms.txt"
+      "destination": "/llms.txt"
     }
   ]
 }
