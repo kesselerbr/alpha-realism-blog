@@ -1,3 +1,12 @@
 # Auth.md Agent Registration & Authentication
 
-Alpha Realism content and llms.txt endpoints are public and open for read access by all AI agents. No API key or OAuth registration is required for content consumption.
+## Agent Registration
+Agent registration is open and public for all AI agents.
+- Register URI: https://www.aialpharealism.online/auth.md
+- Supported Identity Types: anonymous, agent
+- Supported Credential Types: public, bearer
+- Authorization Server: https://www.aialpharealism.online/
+- Protected Resource: https://www.aialpharealism.online/
+
+## Agent Authentication
+Agents can access public content endpoints and llms.txt freely without pre-registration credentials.
