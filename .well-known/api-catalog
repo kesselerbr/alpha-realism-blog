@@ -4,14 +4,14 @@
       "anchor": "https://www.aialpharealism.online/",
       "service-desc": [
         {
-          "href": "https://www.aialpharealism.online/llms.txt",
-          "type": "text/markdown"
+          "href": "https://www.aialpharealism.online/openapi.json",
+          "type": "application/json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://www.aialpharealism.online/",
-          "type": "text/html"
+          "href": "https://www.aialpharealism.online/llms.txt",
+          "type": "text/markdown"
         }
       ],
       "status": [

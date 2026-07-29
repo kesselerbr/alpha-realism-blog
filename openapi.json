@@ -1,0 +1,29 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Alpha Realism API & Calibration Engine",
+    "description": "API and content discovery service for Alpha Realism 5-Layer Prompting Calibration.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://www.aialpharealism.online"
+    }
+  ],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "summary": "Retrieve LLM Calibration Guide in Markdown",
+        "operationId": "getLLMGuide",
+        "responses": {
+          "200": {
+            "description": "Markdown calibration document",
+            "content": {
+              "text/markdown": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

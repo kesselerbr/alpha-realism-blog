@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"llms\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp/server-card.json>; rel=\"mcp-server-card\", </.well-known/agent-skills/index.json>; rel=\"agent-skills-index\""
+          "value": "<https://www.aialpharealism.online/sitemap.xml>; rel=\"sitemap\", <https://www.aialpharealism.online/llms.txt>; rel=\"llms\", <https://www.aialpharealism.online/.well-known/api-catalog>; rel=\"api-catalog\", <https://www.aialpharealism.online/.well-known/mcp/server-card.json>; rel=\"mcp-server-card\", <https://www.aialpharealism.online/.well-known/agent-skills/index.json>; rel=\"agent-skills-index\", <https://www.aialpharealism.online/openapi.json>; rel=\"service-desc\""
         }
       ]
     },
