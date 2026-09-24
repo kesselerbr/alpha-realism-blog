@@ -68,6 +68,13 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/freebie",
+      "destination": "/freebie.html",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
